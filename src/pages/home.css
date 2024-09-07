@@ -1,0 +1,85 @@
+body{
+    background: linear-gradient(90deg, #000000 40%,  #464644 90%);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    
+}
+
+.navbar {
+    padding: 10px 0;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 30px;
+    padding: 0;
+}
+
+.nav-list li {
+    margin: 0 20px;
+}
+
+.nav-list a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-list a:hover {
+    color: #ddd;
+}
+.container {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    justify-content: space-between; /* Distribute space between content and profile photo */
+    width: 60%; /* Full width of the parent container */
+    max-width: 1200px; /* Optional: set a max-width for the container */
+    margin: 50px auto; /* Center the container horizontally */
+    padding: 20px; /* Add some padding around the container */
+}
+
+.content {
+    flex: 1; /* Take up remaining space */
+    padding-right: 20px; /* Space between content and profile photo */
+    color: white;
+}
+
+.profile-container {
+    position: relative;
+    display: inline-block;
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Adjust size as needed */
+    border-radius: 50%; /* Circular container */
+    overflow: hidden;
+}
+.rotating-border {
+    position: absolute;
+    top: -10px; /* Adjust to fit the border width */
+    left: -10px; /* Adjust to fit the border width */
+    right: -10px; /* Adjust to fit the border width */
+    bottom: -10px; /* Adjust to fit the border width */
+    border-radius: 50%; /* Circular border */
+    border: 10px solid transparent; /* Border width */
+    border-image: conic-gradient(from 0deg, #000000, #464644, #000000); /* Gradient color */
+    border-image-slice: 1; /* Ensure the gradient is used as a border */
+    animation: rotate-border 5s linear infinite; /* Rotate the border */
+    z-index: 1; /* Place the border above the image */
+}
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Circular shape for profile photo */
+    object-fit: cover; /* Ensure the image covers the area */
+    z-index: 0; /* Place the photo below the rotating border */
+}
+@keyframes rotate-border {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
