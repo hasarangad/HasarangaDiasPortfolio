@@ -55,6 +55,9 @@ body{
     border-radius: 50%; /* Circular container */
     overflow: hidden;
 }
+image{
+    
+}
 .rotating-border {
     position: absolute;
     top: -10px; /* Adjust to fit the border width */
