@@ -7,6 +7,7 @@ body{
 }
 
 .navbar {
+    margin-top: 10px;
     padding: 10px 0;
 }
 
@@ -29,16 +30,23 @@ body{
 }
 
 .nav-list a:hover {
-    color: #ddd;
+    color: #00ffb3;
+    /* background: linear-gradient(90deg, #ffffff 40%,  #00ffb3 90%); */
+
 }
+.nav-list:visited{
+    color: #00ffb3;
+}
+
 .container {
     display: flex;
     align-items: center; /* Vertically center items */
     justify-content: space-between; /* Distribute space between content and profile photo */
-    width: 60%; /* Full width of the parent container */
+    width: 70%; /* Full width of the parent container */
     max-width: 1200px; /* Optional: set a max-width for the container */
     margin: 50px auto; /* Center the container horizontally */
     padding: 20px; /* Add some padding around the container */
+    transition: transform 0.5s ease;
 }
 
 .content {
@@ -50,39 +58,58 @@ body{
 .profile-container {
     position: relative;
     display: inline-block;
-    width: 150px; /* Adjust size as needed */
-    height: 150px; /* Adjust size as needed */
+    width: 350px; /* Adjust size as needed */
+    height: 350px;
+    min-width: 200px;
+    min-height: 200px;
     border-radius: 50%; /* Circular container */
     overflow: hidden;
 }
-image{
-    
+.name{
+    color: #00ffb3;
 }
-.rotating-border {
-    position: absolute;
-    top: -10px; /* Adjust to fit the border width */
-    left: -10px; /* Adjust to fit the border width */
-    right: -10px; /* Adjust to fit the border width */
-    bottom: -10px; /* Adjust to fit the border width */
-    border-radius: 50%; /* Circular border */
-    border: 10px solid transparent; /* Border width */
-    border-image: conic-gradient(from 0deg, #000000, #464644, #000000); /* Gradient color */
-    border-image-slice: 1; /* Ensure the gradient is used as a border */
-    animation: rotate-border 5s linear infinite; /* Rotate the border */
-    z-index: 1; /* Place the border above the image */
-}
+
 .profile-photo {
     width: 100%;
     height: 100%;
+    min-width: 200px;
+    min-height: 200px;
     border-radius: 50%; /* Circular shape for profile photo */
     object-fit: cover; /* Ensure the image covers the area */
     z-index: 0; /* Place the photo below the rotating border */
 }
-@keyframes rotate-border {
+/* @keyframes rotate-border {
     from {
         transform: rotate(0deg);
     }
     to {
         transform: rotate(360deg);
     }
+} */
+.content {
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .fade-enter {
+    opacity: 0;
+  }
+  
+  .fade-leave {
+    opacity: 1;
+  }
+button{
+    color: black;
+    background-color: #00ffb3;
+    border-radius: 10px;
+    padding: 5px;
+    border-color: #ddd;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+ }
+
+button:hover{
+    background: linear-gradient(90deg, #ffffff 40%,  #00ffb3 90%);
+    cursor: pointer;
+    
 }

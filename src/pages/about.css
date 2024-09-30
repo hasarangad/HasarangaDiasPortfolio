@@ -1,0 +1,47 @@
+.navbar {
+    margin-top: 10px;
+    padding: 10px 0;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 30px;
+    padding: 0;
+}
+
+.nav-list li {
+    margin: 0 20px;
+}
+
+.nav-list a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-list a:hover {
+    color: #00ffb3;
+    /* background: linear-gradient(90deg, #ffffff 40%,  #00ffb3 90%); */
+
+}
+.nav-list:visited{
+    color: #00ffb3;
+}
+
+.about{
+    color: aquamarine;
+}
+
+.contact{
+    color: aquamarine;
+}
+
+.education{
+    color: aquamarine;
+}
+
+.techSkills{
+    color: aquamarine;
+}

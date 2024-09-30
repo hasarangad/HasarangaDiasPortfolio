@@ -30,4 +30,5 @@ body{
 
 .nav-list a:hover {
     color: #ddd;
+    background: linear-gradient(90deg, #ffffff 40%,  #00ffb3 90%);
 }

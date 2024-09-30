@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import { useState, useEffect } from 'react';
 import pp from '../images/pp.png'
 import './home.css'
+import '../output.css'
 
 export default function Home() {
     useEffect(()=>{
@@ -29,7 +30,7 @@ export default function Home() {
               setContent(prevContent => (
                   prevContent === initialContent ? newContent : initialContent
               ));
-          }, 5000); // Change content every minute
+          }, 10000); // Change content every minute
 
           // Cleanup interval on component unmount
           return () => clearInterval(intervalId);
@@ -45,13 +46,16 @@ export default function Home() {
 
         <div class="container">
             <div class="content">
-                <div className="name">
+                <div >
                   <p>I'm</p>
-                  <h1>Keshan Hasaranga Dias Gunawardhana</h1>
+                  <h1 class="name">Keshan Hasaranga Dias Gunawardhana</h1>
                 </div>
-                <h1>{content.title}</h1>
-                <p>{content.description}</p>
-                <p>{content.details}</p>
+                <div className='transition-opacity'>
+                  <h1>{content.title}</h1>
+                  <p>{content.description}</p>
+                  <p>{content.details}</p>
+                </div>
+                
                 <button>Download CV</button>
             </div>
             <div class="profile-container">
