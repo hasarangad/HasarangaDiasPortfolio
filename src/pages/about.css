@@ -31,6 +31,14 @@
 }
 
 .about{
+    /* display: flex; */
+    align-items: center; 
+    justify-content: space-between; 
+    width: 70%; 
+    max-width: 1200px; 
+    margin: 50px auto; /* Center the container horizontally */
+    padding: 20px; /* Add some padding around the container */
+    transition: transform 0.5s ease;
     color: aquamarine;
 }
 
