@@ -1,5 +1,4 @@
 .navbar {
-    margin-top: 10px;
     padding: 10px 0;
 }
 
@@ -18,7 +17,7 @@
 .nav-list a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 25px;
 }
 
 .nav-list a:hover {
@@ -31,21 +30,70 @@
 }
 
 .about{
-    /* display: flex; */
     align-items: center; 
     justify-content: space-between; 
     width: 70%; 
     max-width: 1200px; 
-    margin: 50px auto; /* Center the container horizontally */
+    margin: 0px auto; 
     padding: 20px; /* Add some padding around the container */
     transition: transform 0.5s ease;
-    color: aquamarine;
+}
+
+.about h1{
+    font-size: 50px;
+    text-align: center;
+    color: #00ffb3;
+    margin: 10px;
+}
+
+.about p{
+    font-size: 22px;
+    text-align: justify;
+    color: white;
+    margin-top: 50px;
 }
 
 .contact{
-    color: aquamarine;
+    align-items: center; 
+    justify-content: space-between; 
+    width: 70%; 
+    max-width: 1200px; 
+    margin: auto; 
+    padding: 20px; /* Add some padding around the container */
+    transition: transform 0.5s ease;
 }
 
+.contact h1{
+    font-size: 50px;
+    text-align: center;
+    color: #00ffb3;
+    margin: 10px;
+    margin-bottom: 30px;
+}
+
+.contact p{
+    font-size: 22px;
+    text-align: justify;
+    color: white;
+    
+}
+/* In your about.css file */
+.contact p {
+    display: flex;
+    align-items: center;
+    margin: 25px 10px;
+  }
+  
+  .contact a {
+    margin-left: 10px;
+    color: #0077b5; /* You can change the color */
+  }
+  
+  .contact svg {
+    font-size: 20px;
+    margin-right: 20px;
+  }
+  
 .education{
     color: aquamarine;
 }
@@ -53,3 +101,26 @@
 .techSkills{
     color: aquamarine;
 }
+
+
+
+/* Add this to your existing CSS */
+
+/* Base styles for elements to animate */
+.about, .contact, .education, .techSkills {
+    opacity: 0;
+    transform: translateX(100px); /* Start from right side */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+  
+  /* When scrolled into view, apply these styles */
+  .in-view {
+    opacity: 1;
+    transform: translateX(0); /* Move to original position */
+  }
+  
+  .out-of-view {
+    opacity: 0;
+    transform: translateX(100px); /* Move out to right side */
+  }
+ 
