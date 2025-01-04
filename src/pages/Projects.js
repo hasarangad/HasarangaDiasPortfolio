@@ -30,9 +30,9 @@ export default function Projects() {
       githubLink: "https://github.com/hasarangad/ClassPro"
     },
     "CAREERBRIDGE": {
-      description: "Job Portal.",
+      description: "Platform to find a job, post a job.",
       additionalInfo: [
-        "Platform to find a job, post a job (Group project)",
+        "Job Portal (Group project)",
         "Tech stack used: HTML, CSS, JAVASCRIPT, PHP"
       ],
       moreInfo: "CAREERBRIDGE is a dynamic job portal platform designed to connect job seekers with employers. Developed as a group project, the platform allows users to search for job opportunities and apply for positions, while employers can post job listings and manage applications. Built using a tech stack that includes HTML, CSS, JavaScript, and PHP, CAREERBRIDGE offers a user-friendly interface with intuitive navigation. Job seekers can create profiles, upload resumes, and apply to jobs, while employers can post openings and review applications. The project aims to streamline the job search process and provide a seamless, efficient way for companies to find talent.",
