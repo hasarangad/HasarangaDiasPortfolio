@@ -1,0 +1,51 @@
+/* Add this to your CSS file */
+
+.project-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /* Space between the project boxes */
+    padding: 2rem;
+    flex-wrap: wrap; /* Allows wrapping of items on smaller screens */
+  }
+  
+  .project-box {
+    background-color: #2D2D2D; /* Dark background color */
+    color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow effect */
+    width: 45%; /* Takes up 45% of the width */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+  }
+  
+  .project-box:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+  }
+  
+  .project-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem; /* Space between title and description */
+  }
+  
+  .project-description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 768px) {
+    .project-box {
+      width: 100%; /* Stack project boxes on small screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .project-title {
+      font-size: 1.25rem; /* Adjust title font size on small screens */
+    }
+    .project-description {
+      font-size: 0.9rem; /* Adjust description font size on small screens */
+    }
+  }
+  
