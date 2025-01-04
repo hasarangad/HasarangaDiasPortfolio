@@ -25,7 +25,7 @@ export default function Projects() {
         "Platform to find a job, post a job (Group project)",
         "Tech stack used: HTML, CSS, JAVASCRIPT, PHP"
       ],
-      moreInfo: "CareerBridge allows users to search for job opportunities and post jobs, aiming to connect employers and job seekers."
+      moreInfo: "CAREERBRIDGE is a dynamic job portal platform designed to connect job seekers with employers. Developed as a group project, the platform allows users to search for job opportunities and apply for positions, while employers can post job listings and manage applications. Built using a tech stack that includes HTML, CSS, JavaScript, and PHP, CAREERBRIDGE offers a user-friendly interface with intuitive navigation. Job seekers can create profiles, upload resumes, and apply to jobs, while employers can post openings and review applications. The project aims to streamline the job search process and provide a seamless, efficient way for companies to find talent."
     },
     "SNAKE GAME": {
       description: "It is a remake of the Nokia Snake game.",
@@ -33,7 +33,7 @@ export default function Projects() {
         "Mini Game",
         "Tech stack used: Python"
       ],
-      moreInfo: "A fun and interactive remake of the classic Nokia Snake game, developed using Python."
+      moreInfo: "SNAKE GAME is a simple yet engaging remake of the classic Nokia Snake game, developed using Python. This mini-game brings the nostalgia of the original mobile game to life with modern coding techniques. Players control the snake, guiding it to eat food while avoiding collisions with the walls or its own body. As the snake grows longer, the game becomes more challenging, testing players' reflexes and strategic thinking. Built using Python, this project demonstrates basic game development principles, including handling user input, collision detection, and dynamic game state updates, making it a fun and educational experience."
     },
     "VIRTUAL CALCULATOR": {
       description: "Virtual calculator that uses finger movements to operate.",
@@ -41,7 +41,7 @@ export default function Projects() {
         "Generates 16 buttons for calculation",
         "Tech stack used: OpenCV, Python"
       ],
-      moreInfo: "The virtual calculator uses hand gesture recognition with OpenCV to simulate button clicks for performing mathematical calculations."
+      moreInfo: "VIRTUAL CALCULATOR is an innovative calculator application that allows users to perform calculations using finger movements, eliminating the need for physical interaction with buttons. Developed using Python and OpenCV, this project utilizes computer vision techniques to track hand gestures and interpret them as input for the calculator. The application dynamically generates 16 buttons for various mathematical operations, and users can control the calculator simply by moving their fingers in front of the camera. This project demonstrates the integration of computer vision and user interaction, showcasing both technical skills in Python and creative problem-solving in gesture recognition."
     },
     "MY PORTFOLIO": {
       description: "Developed using React.js and Tailwind CSS.",
@@ -49,7 +49,7 @@ export default function Projects() {
         "Created a responsive and dynamic personal portfolio website to showcase skills, projects, and experience as a software engineer.",
         "Implemented modern design principles using Tailwind CSS and interactive user experiences with React.js, including state management and component-driven architecture."
       ],
-      moreInfo: "The portfolio website highlights my software engineering skills, my projects, and my journey in the tech industry."
+      moreInfo: "MY PORTFOLIO is a dynamic and responsive personal website developed using React.js and Tailwind CSS, designed to showcase a diverse range of skills in software engineering, networking, and cybersecurity. The portfolio highlights key projects, technical expertise, and accomplishments across these domains, offering a comprehensive overview of the user's capabilities. With a modern design approach powered by Tailwind CSS and interactive user experiences facilitated by React.js, the website features state management and component-driven architecture to ensure smooth navigation and engagement. Whether showcasing software solutions, network configurations, or cybersecurity strategies, this portfolio serves as a professional representation of the user's multifaceted skill set."
     }
   };
 
