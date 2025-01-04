@@ -1,26 +1,27 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
-// import './navbar.css'
-
+import { FaHome, FaInfoCircle, FaCode } from 'react-icons/fa';  // Importing icons from React Icons
 
 export default function Navbar() {
   return (
-    <>
-    
-    <nav class="navbar">
-      <ul class="nav-list">
+    <nav className="navbar">
+      <ul className="nav-list">
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">
+            <FaHome size={20} style={{ marginRight: '8px' }} /> Home
+          </Link>
         </li>
         <li>
-          <Link to="/About">About</Link>
+          <Link to="/About">
+            <FaInfoCircle size={20} style={{ marginRight: '8px' }} /> About
+          </Link>
         </li>
         <li>
-          <Link to="/Projects" >Projects</Link>
+          <Link to="/Projects">
+            <FaCode size={20} style={{ marginRight: '8px' }} /> Projects
+          </Link>
         </li>
       </ul>
     </nav>
-    
-    </>
-  )
+  );
 }
