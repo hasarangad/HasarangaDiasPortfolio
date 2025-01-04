@@ -4,12 +4,13 @@ import pp from '../images/pp.png';
 import './home.css';
 import '../output.css';
 import ParticleBackground from './particles.js';
+import cv from '../assets/cv.pdf'; // Path to your CV document
 
 export default function Home() {
     useEffect(() => {
         document.title = "Hasaranga Dias | Home";
     }, []);
-  
+
     const initialContent = {
         title: 'Software Engineer',
         description: 'Crafting Innovative Solutions',
@@ -32,11 +33,19 @@ export default function Home() {
                 setContent(prevContent => (prevContent === initialContent ? newContent : initialContent));
                 setIsTransitioning(false); // End transition
             }, 500); // Duration of the fade-out transition
-        }, 30000); // Change content every 10 seconds
+        }, 30000); // Change content every 30 seconds
 
         // Cleanup interval on component unmount
         return () => clearInterval(intervalId);
     }, []);
+
+    // Function to handle CV download
+    const handleDownload = () => {
+        const link = document.createElement('a');
+        link.href = cv; // Set the path to your CV document
+        link.download = 'Hasaranga_Dias_CV.pdf'; // Set the default filename
+        link.click(); // Trigger the download
+    };
 
     return (
         <>
@@ -56,7 +65,7 @@ export default function Home() {
                         <p>{content.description}</p>
                         <p>{content.details}</p>
                     </div>
-                    <button>Download CV</button>
+                    <button onClick={handleDownload}>Download CV</button>
                 </div>
                 <div className="profile-container">
                     <div className="rotating-border"></div>
