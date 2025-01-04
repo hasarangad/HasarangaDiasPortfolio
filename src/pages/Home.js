@@ -33,7 +33,7 @@ export default function Home() {
                 setContent(prevContent => (prevContent === initialContent ? newContent : initialContent));
                 setIsTransitioning(false); // End transition
             }, 500); // Duration of the fade-out transition
-        }, 30000); // Change content every 30 seconds
+        }, 15000); // Change content every 30 seconds
 
         // Cleanup interval on component unmount
         return () => clearInterval(intervalId);
