@@ -55,7 +55,7 @@ export default function Projects() {
         "Implemented modern design principles using Tailwind CSS and interactive user experiences with React.js, including state management and component-driven architecture."
       ],
       moreInfo: "MY PORTFOLIO is a dynamic and responsive personal website developed using React.js and Tailwind CSS, designed to showcase a diverse range of skills in software engineering, networking, and cybersecurity. The portfolio highlights key projects, technical expertise, and accomplishments across these domains, offering a comprehensive overview of the user's capabilities. With a modern design approach powered by Tailwind CSS and interactive user experiences facilitated by React.js, the website features state management and component-driven architecture to ensure smooth navigation and engagement. Whether showcasing software solutions, network configurations, or cybersecurity strategies, this portfolio serves as a professional representation of the user's multifaceted skill set.",
-      githubLink: "https://github.com/hasarangad/My-Portfolio"
+      githubLink: "https://github.com/hasarangad/HasarangaDiasPortfolio"
     }
   };
 
