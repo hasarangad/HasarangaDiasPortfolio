@@ -1,11 +1,11 @@
-body{
-    background: linear-gradient(90deg, #000000 40%,  #464644 90%);
+body {
+    background: linear-gradient(90deg, #000000 40%, #464644 90%);
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    
 }
 
+/* Navbar Styles */
 .navbar {
     margin-top: 10px;
     padding: 10px 0;
@@ -31,73 +31,61 @@ body{
 
 .nav-list a:hover {
     color: #00ffb3;
-    /* background: linear-gradient(90deg, #ffffff 40%,  #00ffb3 90%); */
-
 }
-.nav-list:visited{
+
+.nav-list:visited {
     color: #00ffb3;
 }
 
+/* Container Styles */
 .container {
     display: flex;
-    align-items: center; /* Vertically center items */
-    justify-content: space-between; /* Distribute space between content and profile photo */
-    width: 70%; /* Full width of the parent container */
-    max-width: 1200px; /* Optional: set a max-width for the container */
-    margin: 50px auto; /* Center the container horizontally */
-    padding: 20px; /* Add some padding around the container */
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
     transition: transform 0.5s ease;
 }
 
+/* Content Styles */
 .content {
-    flex: 1; /* Take up remaining space */
-    padding-right: 20px; /* Space between content and profile photo */
+    flex: 1;
+    padding-right: 20px;
     color: white;
 }
 
+/* Profile Container Styles */
 .profile-container {
     position: relative;
     display: inline-block;
-    width: 350px; /* Adjust size as needed */
+    width: 350px;
     height: 350px;
     min-width: 200px;
     min-height: 200px;
-    border-radius: 50%; /* Circular container */
+    border-radius: 50%;
     overflow: hidden;
 }
-.name{
+
+/* Name Styles */
+.name {
     color: #00ffb3;
 }
 
+/* Profile Photo Styles */
 .profile-photo {
     width: 100%;
     height: 100%;
     min-width: 200px;
     min-height: 200px;
-    border-radius: 50%; /* Circular shape for profile photo */
-    object-fit: cover; /* Ensure the image covers the area */
-    z-index: 0; /* Place the photo below the rotating border */
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 0;
 }
-/* @keyframes rotate-border {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-} */
-.content {
-    transition: opacity 0.5s ease-in-out;
-  }
-  
-  .fade-enter {
-    opacity: 0;
-  }
-  
-  .fade-leave {
-    opacity: 1;
-  }
-button{
+
+/* Button Styles */
+button {
     color: black;
     background-color: #00ffb3;
     border-radius: 10px;
@@ -106,29 +94,111 @@ button{
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 10px;
- }
-
-button:hover{
-    background: linear-gradient(90deg, #ffffff 40%,  #00ffb3 90%);
-    cursor: pointer;
-    
 }
+
+button:hover {
+    background: linear-gradient(90deg, #ffffff 40%, #00ffb3 90%);
+    cursor: pointer;
+}
+
+/* Transition Styles for content */
 .transition-content {
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-  }
-  
-  .transition-content.fading {
+}
+
+.transition-content.fading {
     opacity: 0;
-    transform: translateY(-10px); /* Optional: Move the text up while fading */
-  }
-  
-  .name, .transition-content h1, .transition-content p {
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-  }
-  
-  .transition-content.fading h1,
-  .transition-content.fading p {
+    transform: translateY(-10px);
+}
+
+.transition-content.fading h1,
+.transition-content.fading p {
     opacity: 0;
-    transform: translateY(-10px); /* Optional: Move the text up while fading */
-  }
-  
+    transform: translateY(-10px);
+}
+
+/* Media Queries for Responsiveness */
+
+/* For Mobile Devices */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        margin: 20px 0;
+    }
+
+    .nav-list li {
+        margin: 10px 0;
+    }
+
+    .container {
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-container {
+        width: 250px;
+        height: 250px;
+    }
+
+    .profile-photo {
+        width: 100%;
+        height: 100%;
+    }
+
+    .content {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .transition-content {
+        text-align: center;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px;
+        width: 80%;
+    }
+}
+
+/* For Tablet Devices */
+@media (max-width: 1024px) {
+    .container {
+        width: 80%;
+    }
+
+    .profile-container {
+        width: 300px;
+        height: 300px;
+    }
+
+    .profile-photo {
+        width: 100%;
+        height: 100%;
+    }
+
+    .content {
+        padding-right: 0;
+    }
+
+    .transition-content {
+        text-align: center;
+    }
+
+    button {
+        font-size: 15px;
+        padding: 8px;
+    }
+}
+
+/* For Desktop Devices */
+@media (min-width: 1200px) {
+    .container {
+        width: 70%;
+    }
+}
