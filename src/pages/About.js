@@ -12,7 +12,7 @@ import rcg from '../images/rcg_logo.jpg';
 export default function About() {
   const [isInView, setIsInView] = useState({
     about: true,
-    contact: false,
+    contact: true,
     education: false
   });
 
