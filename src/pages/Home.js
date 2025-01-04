@@ -4,7 +4,7 @@ import pp from '../images/pp.png';
 import './home.css';
 import '../output.css';
 import ParticleBackground from './particles.js';
-import cv from '../assets/cv.pdf'; // Path to your CV document
+import cv from '../cv/Hasaranga Dias.pdf'; // Path to your CV document
 
 export default function Home() {
     useEffect(() => {
