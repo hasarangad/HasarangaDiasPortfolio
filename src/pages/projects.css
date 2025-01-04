@@ -40,9 +40,7 @@
   right: 10px;
 }
 
-.close-modal-btn:hover {
-  background-color: #444;
-}
+
 
 .project-container {
   display: flex;
@@ -71,6 +69,7 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  color: #00ffb3;
 }
 
 .project-description {
@@ -87,4 +86,8 @@
   .modal-content {
     width: 90%;
   }
+}
+.close-modal-btn:hover {
+  background-color: red;
+  color: black;
 }
