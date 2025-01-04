@@ -86,7 +86,7 @@
   
   .contact a {
     margin-left: 10px;
-    color: #0077b5; /* You can change the color */
+    color: white; /* You can change the color */
   }
   
   .contact svg {
@@ -94,22 +94,83 @@
     margin-right: 20px;
   }
   
-.education{
-    color: aquamarine;
+  .education {
+    align-items: center; 
+    justify-content: space-between; 
+    width: 70%; 
+    max-width: 1200px; 
+    margin: auto; 
+    padding: 20px; /* Add some padding around the container */
+    transition: transform 0.5s ease;
+  }
+  
+  .education h1 {
+    font-size: 50px;
+    text-align: center;
+    color: #00ffb3;
+    margin: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .education p {
+    font-size: 22px;
+    text-align: justify;
+    color: white;
+    margin-top: 20px;
+  }
+  
+  .education p img {
+    width: 80px; /* Logo size */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 15px; /* Space between logo and text */
+    border-radius: 5px; /* Slightly rounded corners for logos */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+    margin-bottom: 10px;
+  }
+  
+.education p strong {
+    color: white;
+    padding-bottom: 50px;
 }
 
-.techSkills{
-    color: aquamarine;
-}
+.extra-curricular, .awards {
+    padding: 20px;
+    background-color: #fdfdfd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+  }
+  
+  .extra-curricular h1, .awards h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .extra-curricular ul, .awards ul {
+    list-style-type: disc;
+    padding-left: 40px;
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .extra-curricular ul li, .awards ul li {
+    margin-bottom: 10px;
+  }
+  
+  .extra-curricular ul li strong, .awards ul li strong {
+    color: #0073e6;
+  }
+  
 
 
 
-/* Add this to your existing CSS */
 
-/* Base styles for elements to animate */
+
 .about, .contact, .education, .techSkills {
     opacity: 0;
-    transform: translateX(100px); /* Start from right side */
+    transform: translateX(50px); /* Start from right side */
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
   }
   
@@ -121,6 +182,8 @@
   
   .out-of-view {
     opacity: 0;
-    transform: translateX(100px); /* Move out to right side */
+    transform: translateX(50px); /* Move out to right side */
   }
  
+
+  

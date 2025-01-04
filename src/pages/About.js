@@ -3,14 +3,17 @@ import Navbar from '../components/Navbar';
 import './about.css';
 import ParticleBackground from './particles.js';
 import { FaEnvelope, FaFacebook, FaInstagram, FaLinkedin, FaGithub, FaTwitter, FaPhoneAlt, FaYoutube } from 'react-icons/fa';
+import ousl from '../images/ousl_logo.jpg';
+import kiu from '../images/kiu_logo.png';
+import idm from '../images/idm_logo.jpg';
+import rcg from '../images/rcg_logo.jpg';
 
 
 export default function About() {
   const [isInView, setIsInView] = useState({
     about: true,
-    contact: true,
-    education: false,
-    techSkills: false
+    contact: false,
+    education: false
   });
 
   useEffect(() => {
@@ -22,31 +25,28 @@ export default function About() {
       const about = document.querySelector('.about');
       const contact = document.querySelector('.contact');
       const education = document.querySelector('.education');
-      const techSkills = document.querySelector('.techSkills');
-
-      // Check if each section is in the viewport
+  
       setIsInView({
         about: isInViewPort(about),
         contact: isInViewPort(contact),
-        education: isInViewPort(education),
-        techSkills: isInViewPort(techSkills)
+        education: isInViewPort(education)
       });
     };
-
-    // Helper function to check if the element is in the viewport
+  
     const isInViewPort = (el) => {
       const rect = el.getBoundingClientRect();
-      return rect.top >= 0 && rect.bottom <= window.innerHeight;
+      return (
+        rect.top >= 0 &&
+        rect.top <= window.innerHeight * 0.75 // Adjust this value for earlier/later triggering
+      );
     };
-
-    // Add scroll event listener
+  
     window.addEventListener('scroll', handleScroll);
-
-    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  
 
   return (
     <div>
@@ -100,28 +100,63 @@ export default function About() {
 
       <div className={`education ${isInView.education ? 'in-view' : 'out-of-view'}`}>
         <h1>My Educational Story</h1>
+        
         <p>
+          <a href="https://www.ou.ac.lk/" target="_blank" rel="noopener noreferrer">
+            <img 
+              src={ousl} 
+              alt="OUSL Logo" 
+              style={{ width: '50px', marginRight: '10px', verticalAlign: 'middle' }} 
+            />
+          </a>
           <strong>Software Engineering (BSc)</strong><br />
-          Open University of Sri Lanka (OUSL) | Expected Graduation: 2025
+          Open University of Sri Lanka (OUSL) | Expected Graduation: 2026
         </p>
+        
         <p>
+          <a href="https://www.kiu.ac.lk/" target="_blank" rel="noopener noreferrer">
+            <img 
+              src={kiu} 
+              alt="KIU Logo" 
+              style={{ width: '50px', marginRight: '10px', verticalAlign: 'middle' }} 
+            />
+          </a>
           <strong>Computer Networks and Cybersecurity (BSc)</strong><br />
-          KIU (KIU University) | Expected Graduation: 2025
+          KIU (KIU University) | Expected Graduation: 2026
+        </p>
+        
+        <p>
+          <a href="https://www.idm.edu/" target="_blank" rel="noopener noreferrer">
+            <img 
+              src={idm} 
+              alt="IDM Logo" 
+              style={{ width: '50px', marginRight: '10px', verticalAlign: 'middle' }} 
+            />
+          </a>
+          <strong>Diploma in Office Applications and Web</strong><br />
+          IDM Southern Campus | Completed: 2022
+        </p>
+        
+        <p>
+          <a href="https://www.richmondcollege.lk/" target="_blank" rel="noopener noreferrer">
+            <img 
+              src={rcg} 
+              alt="Richmond College Logo" 
+              style={{ width: '50px', marginRight: '10px', verticalAlign: 'middle' }} 
+            />
+          </a>
+          <strong>Advanced Level - Physical Science </strong><br/>
+          Richmond College Galle, Sri Lanka | Completed: 2020
         </p>
       </div>
 
-      <div className={`techSkills ${isInView.techSkills ? 'in-view' : 'out-of-view'}`}>
-        <h1>Skills That Drive Me</h1>
-        <ul>
-          <li>Programming Languages: JavaScript, Python, Java, C++</li>
-          <li>Web Development: React.js, Node.js, HTML, CSS, Tailwind CSS, Express.js</li>
-          <li>Cybersecurity: Ethical Hacking, Malware Analysis, Network Security, OSINT</li>
-          <li>Databases: MySQL, MongoDB, PostgreSQL</li>
-          <li>Tools: Git, Docker, Nmap, Kali Linux, Burp Suite, Wireshark</li>
-          <li>Cloud: AWS, Azure</li>
-          <li>Operating Systems: Linux, Windows, macOS</li>
-        </ul>
+      <div>
+        <br/><br/><br/><br/>
       </div>
+
+      
+
+      
     </div>
   );
 }
