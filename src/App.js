@@ -1,28 +1,18 @@
 import logo from './logo.svg';
-import { BrowserRouter, Route, Routes} from 'react-router-dom'
-import Home from './pages/Home'
-import About from './pages/About'
-import Projects from './pages/Projects'
-
+import { HashRouter, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import Projects from './pages/Projects';
 
 function App() {
-  
   return (
-    <>
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
-        <Route exact path='/' element={<Home/>}></Route>
-
-        <Route path='/About' element={<About/>}></Route>
-
-        <Route path='/Projects' element={<Projects/>}></Route>
+        <Route exact path='/' element={<Home />} />
+        <Route path='/About' element={<About />} />
+        <Route path='/Projects' element={<Projects />} />
       </Routes>
-    
-    </BrowserRouter>
-    
-    
-      
-    </>
+    </HashRouter>
   );
 }
 
