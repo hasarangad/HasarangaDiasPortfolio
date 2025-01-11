@@ -37,7 +37,7 @@ export default function About() {
       const rect = el.getBoundingClientRect();
       return (
         rect.top >= 0 &&
-        rect.top <= window.innerHeight * 0.75 // Adjust this value for earlier/later triggering
+        rect.top <= window.innerHeight * 0.75 
       );
     };
   

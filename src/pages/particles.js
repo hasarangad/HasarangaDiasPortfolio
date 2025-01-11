@@ -3,10 +3,10 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 
 const ParticlesComponent = (props) => {
-  const [particleCount, setParticleCount] = useState(150); // Default particle count
+  const [particleCount, setParticleCount] = useState(150); 
   const [init, setInit] = useState(false);
 
-  // Initialize the particle engine
+  
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
@@ -19,21 +19,21 @@ const ParticlesComponent = (props) => {
     console.log(container);
   };
 
-  // Increase particle count on page click
+  
   useEffect(() => {
     const handlePageClick = () => {
-      setParticleCount((prev) => prev + 50); // Increase particle count by 50 on click
+      setParticleCount((prev) => prev + 50); 
     };
 
     window.addEventListener("click", handlePageClick);
 
-    // Cleanup listener on unmount
+    
     return () => {
       window.removeEventListener("click", handlePageClick);
     };
   }, []);
 
-  // Particle configuration
+  
   const options = useMemo(
     () => ({
       background: {
@@ -88,7 +88,7 @@ const ParticlesComponent = (props) => {
           density: {
             enable: true,
           },
-          value: particleCount, // Dynamically controlled particle count
+          value: particleCount, 
         },
         opacity: {
           value: 1.0,
@@ -102,7 +102,7 @@ const ParticlesComponent = (props) => {
       },
       detectRetina: true,
     }),
-    [particleCount] // Recompute options when particleCount changes
+    [particleCount] 
   );
 
   return <Particles id={props.id} init={particlesLoaded} options={options} />;

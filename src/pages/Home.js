@@ -4,7 +4,7 @@ import pp from '../images/pp.png';
 import './home.css';
 import '../output.css';
 import ParticleBackground from './particles.js';
-import cv from '../cv/Hasaranga Dias.pdf'; // Path to your CV document
+import cv from '../cv/Hasaranga Dias.pdf';
 
 export default function Home() {
     useEffect(() => {
@@ -28,23 +28,23 @@ export default function Home() {
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-            setIsTransitioning(true); // Trigger transition
+            setIsTransitioning(true); 
             setTimeout(() => {
                 setContent(prevContent => (prevContent === initialContent ? newContent : initialContent));
-                setIsTransitioning(false); // End transition
-            }, 500); // Duration of the fade-out transition
-        }, 15000); // Change content every 30 seconds
+                setIsTransitioning(false); 
+            }, 500); 
+        }, 15000); 
 
-        // Cleanup interval on component unmount
+        
         return () => clearInterval(intervalId);
     }, []);
 
-    // Function to handle CV download
+    
     const handleDownload = () => {
         const link = document.createElement('a');
-        link.href = cv; // Set the path to your CV document
-        link.download = 'Hasaranga_Dias_CV.pdf'; // Set the default filename
-        link.click(); // Trigger the download
+        link.href = cv; 
+        link.download = 'Hasaranga_Dias_CV.pdf'; 
+        link.click(); 
     };
 
     return (
