@@ -73,24 +73,36 @@ body {
 }
 
 /* ─── Animated section ──────────────────────────────────────────── */
+.transition-content {
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
 .transition-content h1 {
   font-size: clamp(20px, 2.5vw, 36px);
   margin: 14px 0 8px;
 }
 
-.transition-content {
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+.transition-content .role-subhead {
+  font-weight: 600;
+  color: #00ffb3;
+  margin: 4px 0 10px;
+  font-size: clamp(15px, 1.15vw, 18px);
+}
+
+.transition-content .role-details {
+  line-height: 1.7;
+  color: #d1dfed;
+  margin: 0;
+  font-size: clamp(14px, 1.05vw, 16.5px);
 }
 
 .transition-content.fading {
   opacity: 0;
-  transform: translateY(-10px);
-}
-
-.transition-content.fading h1,
-.transition-content.fading p {
-  opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-8px);
 }
 
 /* ─── Profile image ─────────────────────────────────────────────── */

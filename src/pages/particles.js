@@ -98,9 +98,9 @@ const ParticlesComponent = (props) => {
 
   return (
     <div style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}>
-      <Particles id={props.id || "tsparticles"} particlesLoaded={particlesLoaded} options={options} />
+      <Particles id="global-tsparticles" particlesLoaded={particlesLoaded} options={options} />
     </div>
   );
 };
 
-export default ParticlesComponent;
+export default React.memo(ParticlesComponent);
