@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import './about.css';
 import ParticleBackground from './particles.js';
@@ -11,74 +11,12 @@ import ousl from '../images/ousl_logo.jpg';
 import kiu  from '../images/kiu_logo.png';
 import idm  from '../images/idm_logo.jpg';
 import rcg  from '../images/rcg_logo.jpg';
-
-/*
- * useFadeIn — robust IntersectionObserver hook
- *
- * Key fixes vs. previous version:
- *  1. threshold: 0  → fires the instant ANY pixel of the element enters
- *     the viewport. threshold: 0.1 / 0.15 silently fails when the element
- *     is taller than the viewport (max intersection ratio < threshold).
- *  2. rootMargin: '0px 0px -60px 0px' → triggers 60 px *before* the
- *     element's top reaches the very bottom of the screen, giving a
- *     smoother feel on all sizes.
- *  3. initialVisible prop → sections already on screen at page-load start
- *     as visible immediately, skipping the invisible-first-frame flash.
- */
-function useFadeIn(initialVisible = false) {
-  const ref = useRef(null);
-  const [visible, setVisible] = useState(initialVisible);
-
-  useEffect(() => {
-    // Already visible — no need to observe
-    if (initialVisible) return;
-
-    const el = ref.current;
-    if (!el) return;
-
-    // Check if the element is already in the viewport right now
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      setVisible(true);
-      return; // Already on screen, no need to set up observer
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect(); // trigger once, stay visible forever
-        }
-      },
-      {
-        threshold: 0,                    // fire on first pixel
-        rootMargin: '0px 0px -60px 0px' // trigger 60px before bottom edge
-      }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // run once on mount
-
-  return [ref, visible];
-}
+import focsec from '../images/focsec.jpeg';
 
 export default function About() {
   useEffect(() => {
     document.title = 'Hasaranga Dias | About';
   }, []);
-
-  /*
-   * The first section (about) is always on screen when the page loads,
-   * so we pass initialVisible=true — it renders visible immediately.
-   * All other sections start hidden and fade in on scroll.
-   */
-  const [aboutRef,      aboutVisible]      = useFadeIn(true);
-  const [contactRef,    contactVisible]    = useFadeIn(false);
-  const [skillsRef,     skillsVisible]     = useFadeIn(false);
-  const [leaderRef,     leaderVisible]     = useFadeIn(false);
-  const [eduRef,        eduVisible]        = useFadeIn(false);
 
   return (
     <div>
@@ -86,7 +24,7 @@ export default function About() {
       <ParticleBackground />
 
       {/* 1 ── About / Bio ──────────────────────────────────────── */}
-      <div ref={aboutRef} className={`about ${aboutVisible ? 'in-view' : 'out-of-view'}`}>
+      <div className="about">
         <h1>A Glimpse Into My Journey</h1>
         <p>
           Hi, I'm Keshan Hasaranga Dias Gunawardhana — a final-year Computer Networks &amp; Cyber Security
@@ -107,7 +45,7 @@ export default function About() {
       </div>
 
       {/* 2 ── Education ────────────────────────────────────────── */}
-      <div ref={eduRef} className={`education ${eduVisible ? 'in-view' : 'out-of-view'}`}>
+      <div className="education">
         <h1>My Educational Story</h1>
 
         <div className="edu-card">
@@ -156,9 +94,7 @@ export default function About() {
       </div>
 
       {/* 3 ── Technical Skills ─────────────────────────────────── */}
-      <div ref={skillsRef}
-           className={`skills ${skillsVisible ? 'in-view' : 'out-of-view'}`}
-           style={{ marginBottom: '2rem' }}>
+      <div className="skills" style={{ marginBottom: '2rem' }}>
         <h1>Technical Skills</h1>
 
         <p><strong>🔍 Security &amp; Network Analysis:</strong> Nmap, Wireshark, Burp Suite, Metasploit, OWASP ZAP, Semgrep, Checkov</p>
@@ -169,16 +105,14 @@ export default function About() {
       </div>
 
       {/* 4 ── Leadership ───────────────────────────────────────── */}
-      <div ref={leaderRef}
-           className={`leadership-section ${leaderVisible ? 'in-view' : 'out-of-view'}`}
-           style={{ marginBottom: '3rem' }}>
+      <div className="leadership-section" style={{ marginBottom: '3rem' }}>
         <h1>🏆 Leadership &amp; Honors</h1>
 
         <div className="leadership-grid">
           <div className="leadership-card">
             <div className="leadership-shine"></div>
-            <div className="leadership-icon-wrap">
-              <FaCrown className="leadership-icon" />
+            <div className="leadership-icon-wrap leadership-logo-wrap">
+              <img src={focsec} alt="FOCSEC Logo" className="leadership-img" />
             </div>
             <div className="leadership-details">
               <div className="leadership-header">
@@ -238,7 +172,7 @@ export default function About() {
       </div>
 
       {/* 5 ── Contact ──────────────────────────────────────────── */}
-      <div ref={contactRef} className={`contact ${contactVisible ? 'in-view' : 'out-of-view'}`}>
+      <div className="contact">
         <h1>Reach Out to Me</h1>
 
         <p><FaPhoneAlt /> Phone: <a href="tel:+94768718183">+94 76 871 8183</a></p>
@@ -282,8 +216,6 @@ export default function About() {
           </a>
         </p>
       </div>
-
-      <div style={{ height: '60px' }} />
     </div>
   );
 }

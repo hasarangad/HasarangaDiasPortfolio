@@ -3,10 +3,8 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 
 const ParticlesComponent = (props) => {
-  const [particleCount, setParticleCount] = useState(150); 
   const [init, setInit] = useState(false);
 
-  
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
@@ -16,26 +14,15 @@ const ParticlesComponent = (props) => {
   }, []);
 
   const particlesLoaded = (container) => {
-    console.log(container);
+    // Canvas loaded successfully
   };
 
-  
-  useEffect(() => {
-    const handlePageClick = () => {
-      setParticleCount((prev) => prev + 50); 
-    };
-
-    window.addEventListener("click", handlePageClick);
-
-    
-    return () => {
-      window.removeEventListener("click", handlePageClick);
-    };
-  }, []);
-
-  
   const options = useMemo(
     () => ({
+      fullScreen: {
+        enable: true,
+        zIndex: -1,
+      },
       background: {
         color: {
           value: "transparent",
@@ -46,7 +33,7 @@ const ParticlesComponent = (props) => {
         events: {
           onClick: {
             enable: true,
-            mode: "repulse",
+            mode: "push",
           },
           onHover: {
             enable: true,
@@ -55,8 +42,7 @@ const ParticlesComponent = (props) => {
         },
         modes: {
           push: {
-            distance: 200,
-            duration: 15,
+            quantity: 4,
           },
           grab: {
             distance: 150,
@@ -88,10 +74,10 @@ const ParticlesComponent = (props) => {
           density: {
             enable: true,
           },
-          value: particleCount, 
+          value: 120,
         },
         opacity: {
-          value: 1.0,
+          value: 0.8,
         },
         shape: {
           type: "circle",
@@ -102,10 +88,12 @@ const ParticlesComponent = (props) => {
       },
       detectRetina: true,
     }),
-    [particleCount] 
+    []
   );
 
-  return <Particles id={props.id} init={particlesLoaded} options={options} />;
+  if (!init) return null;
+
+  return <Particles id={props.id || "tsparticles"} particlesLoaded={particlesLoaded} options={options} />;
 };
 
 export default ParticlesComponent;
