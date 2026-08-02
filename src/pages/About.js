@@ -4,7 +4,8 @@ import './about.css';
 import ParticleBackground from './particles.js';
 import {
   FaEnvelope, FaFacebook, FaInstagram, FaLinkedin,
-  FaGithub, FaTwitter, FaPhoneAlt, FaYoutube
+  FaGithub, FaTwitter, FaPhoneAlt, FaYoutube,
+  FaCrown, FaCoins, FaMedal
 } from 'react-icons/fa';
 import ousl from '../images/ousl_logo.jpg';
 import kiu  from '../images/kiu_logo.png';
@@ -169,14 +170,71 @@ export default function About() {
 
       {/* 4 ── Leadership ───────────────────────────────────────── */}
       <div ref={leaderRef}
-           className={`skills ${leaderVisible ? 'in-view' : 'out-of-view'}`}
-           style={{ marginBottom: '2rem' }}>
-        <h1>🏆 Leadership</h1>
+           className={`leadership-section ${leaderVisible ? 'in-view' : 'out-of-view'}`}
+           style={{ marginBottom: '3rem' }}>
+        <h1>🏆 Leadership &amp; Honors</h1>
 
-        <p><strong>President</strong> — Faculty of Computer Science &amp; Engineering Student Circle (FOCSEC), KIU University</p>
-        <p><strong>Treasurer</strong> — Young Inventors Club, KIU University</p>
-        <p><strong>Treasurer</strong> — Richmond College Science Society</p>
-        <p><strong>Colours Award</strong> — Richmond College, Galle</p>
+        <div className="leadership-grid">
+          <div className="leadership-card">
+            <div className="leadership-shine"></div>
+            <div className="leadership-icon-wrap">
+              <FaCrown className="leadership-icon" />
+            </div>
+            <div className="leadership-details">
+              <div className="leadership-header">
+                <span className="leadership-role">President</span>
+                <span className="leadership-tag">Executive</span>
+              </div>
+              <h3 className="leadership-org">Faculty of Computer Science &amp; Engineering Student Circle (FOCSEC)</h3>
+              <p className="leadership-inst">KIU University, Sri Lanka</p>
+            </div>
+          </div>
+
+          <div className="leadership-card">
+            <div className="leadership-shine"></div>
+            <div className="leadership-icon-wrap">
+              <FaCoins className="leadership-icon" />
+            </div>
+            <div className="leadership-details">
+              <div className="leadership-header">
+                <span className="leadership-role">Treasurer</span>
+                <span className="leadership-tag">Finance</span>
+              </div>
+              <h3 className="leadership-org">Young Inventors Club</h3>
+              <p className="leadership-inst">KIU University, Sri Lanka</p>
+            </div>
+          </div>
+
+          <div className="leadership-card">
+            <div className="leadership-shine"></div>
+            <div className="leadership-icon-wrap">
+              <FaCoins className="leadership-icon" />
+            </div>
+            <div className="leadership-details">
+              <div className="leadership-header">
+                <span className="leadership-role">Treasurer</span>
+                <span className="leadership-tag">Finance</span>
+              </div>
+              <h3 className="leadership-org">Richmond College Science Society</h3>
+              <p className="leadership-inst">Richmond College, Galle, Sri Lanka</p>
+            </div>
+          </div>
+
+          <div className="leadership-card">
+            <div className="leadership-shine"></div>
+            <div className="leadership-icon-wrap">
+              <FaMedal className="leadership-icon" />
+            </div>
+            <div className="leadership-details">
+              <div className="leadership-header">
+                <span className="leadership-role">Colours Award</span>
+                <span className="leadership-tag">Excellence</span>
+              </div>
+              <h3 className="leadership-org">Richmond College Colours Night</h3>
+              <p className="leadership-inst">Richmond College, Galle, Sri Lanka</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* 5 ── Contact ──────────────────────────────────────────── */}

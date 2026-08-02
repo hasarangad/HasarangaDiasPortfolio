@@ -2,7 +2,8 @@
 .about,
 .contact,
 .education,
-.skills {
+.skills,
+.leadership-section {
   width: min(90%, 900px);
   margin: 0 auto;
   padding: 24px 20px;
@@ -26,7 +27,8 @@
 .about h1,
 .contact h1,
 .education h1,
-.skills h1 {
+.skills h1,
+.leadership-section h1 {
   font-size: clamp(26px, 5vw, 46px);
   text-align: center;
   color: #00ffb3;
@@ -184,12 +186,174 @@
   white-space: nowrap;
 }
 
+/* ─── Leadership & Honors section ──────────────────────────────── */
+.leadership-section {
+  margin-top: 20px;
+}
+
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.leadership-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.015) 100%);
+  border: 1px solid rgba(0, 255, 179, 0.16);
+  border-radius: 14px;
+  padding: 22px 20px;
+  backdrop-filter: blur(8px);
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  overflow: hidden;
+}
+
+/* Left neon glow bar */
+.leadership-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #00ffb3 0%, rgba(0, 255, 179, 0.2) 100%);
+  opacity: 0.6;
+  transition: opacity 0.3s ease, width 0.3s ease;
+}
+
+/* Card hover states */
+.leadership-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 255, 179, 0.45);
+  background: linear-gradient(135deg, rgba(0, 255, 179, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  box-shadow: 0 12px 32px -8px rgba(0, 255, 179, 0.2), inset 0 0 20px rgba(0, 255, 179, 0.03);
+}
+
+.leadership-card:hover::before {
+  opacity: 1;
+  width: 5px;
+}
+
+/* Shimmer shine sweep on hover */
+.leadership-shine {
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+  transition: left 0.75s ease;
+}
+
+.leadership-card:hover .leadership-shine {
+  left: 140%;
+}
+
+/* Icon badge */
+.leadership-icon-wrap {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(0, 255, 179, 0.1);
+  border: 1px solid rgba(0, 255, 179, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00ffb3;
+  font-size: 20px;
+  transition: all 0.35s ease;
+  animation: iconBreathe 4s infinite ease-in-out;
+}
+
+@keyframes iconBreathe {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 179, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 14px 2px rgba(0, 255, 179, 0.35);
+  }
+}
+
+.leadership-card:hover .leadership-icon-wrap {
+  transform: scale(1.12) rotate(6deg);
+  background: rgba(0, 255, 179, 0.22);
+  color: #ffffff;
+  border-color: #00ffb3;
+  box-shadow: 0 0 18px rgba(0, 255, 179, 0.5);
+}
+
+/* Details text block */
+.leadership-details {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.leadership-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.leadership-role {
+  color: #00ffb3;
+  font-size: clamp(16px, 2vw, 18px);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.leadership-tag {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(0, 255, 179, 0.1);
+  color: #00ffb3;
+  border: 1px solid rgba(0, 255, 179, 0.25);
+  transition: all 0.25s ease;
+}
+
+.leadership-card:hover .leadership-tag {
+  background: rgba(0, 255, 179, 0.2);
+  border-color: #00ffb3;
+  color: #ffffff;
+}
+
+.leadership-org {
+  margin: 0;
+  color: #e6edf5;
+  font-size: clamp(13px, 1.8vw, 15px);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.leadership-inst {
+  margin: 0;
+  color: #8c9eb5;
+  font-size: clamp(12px, 1.5vw, 13px);
+  line-height: 1.35;
+}
+
 /* ─── Mobile ───────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .about,
   .contact,
   .education,
-  .skills {
+  .skills,
+  .leadership-section {
     padding: 18px 16px;
   }
 
@@ -209,13 +373,31 @@
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .leadership-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .leadership-card {
+    padding: 16px 14px;
+    gap: 14px;
+  }
+
+  .leadership-icon-wrap {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
 }
 
 /* ─── Small mobile ──────────────────────────────────────────────── */
 @media (max-width: 400px) {
   .about h1,
   .contact h1,
-  .education h1 {
+  .education h1,
+  .skills h1,
+  .leadership-section h1 {
     font-size: 22px;
   }
 
