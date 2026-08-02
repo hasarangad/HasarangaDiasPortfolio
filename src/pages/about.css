@@ -1,189 +1,225 @@
-.navbar {
-    padding: 10px 0;
+/* ─── Shared section base ───────────────────────────────────────── */
+.about,
+.contact,
+.education,
+.skills {
+  width: min(90%, 900px);
+  margin: 0 auto;
+  padding: 24px 20px;
+  /* start invisible — IntersectionObserver adds in-view class */
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
 }
 
-.nav-list {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    margin: 30px;
-    padding: 0;
+.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.nav-list li {
-    margin: 0 20px;
+.out-of-view {
+  opacity: 0;
+  transform: translateY(36px);
 }
 
-.nav-list a {
-    color: white;
-    text-decoration: none;
-    font-size: 25px;
+/* ─── Section headings ──────────────────────────────────────────── */
+.about h1,
+.contact h1,
+.education h1,
+.skills h1 {
+  font-size: clamp(26px, 5vw, 46px);
+  text-align: center;
+  color: #00ffb3;
+  margin: 0 0 24px;
 }
 
-.nav-list a:hover {
-    color: #00ffb3;
-    /* background: linear-gradient(90deg, #ffffff 40%,  #00ffb3 90%); */
-
-}
-.nav-list:visited{
-    color: #00ffb3;
-}
-
-.about{
-    align-items: center; 
-    justify-content: space-between; 
-    width: 70%; 
-    max-width: 1200px; 
-    margin: 0px auto; 
-    padding: 20px; /* Add some padding around the container */
-    transition: transform 0.5s ease;
+/* ─── About text ────────────────────────────────────────────────── */
+.about p {
+  font-size: clamp(15px, 2vw, 20px);
+  text-align: justify;
+  color: white;
+  margin-top: 20px;
+  line-height: 1.75;
 }
 
-.about h1{
-    font-size: 50px;
-    text-align: center;
-    color: #00ffb3;
-    margin: 10px;
+/* ─── Contact ───────────────────────────────────────────────────── */
+.contact {
+  margin-top: 20px;
 }
 
-.about p{
-    font-size: 22px;
-    text-align: justify;
-    color: white;
-    margin-top: 50px;
-}
-
-.contact{
-    align-items: center; 
-    justify-content: space-between; 
-    width: 70%; 
-    max-width: 1200px; 
-    margin: auto; 
-    padding: 20px; /* Add some padding around the container */
-    transition: transform 0.5s ease;
-}
-
-.contact h1{
-    font-size: 50px;
-    text-align: center;
-    color: #00ffb3;
-    margin: 10px;
-    margin-bottom: 30px;
-}
-
-.contact p{
-    font-size: 22px;
-    text-align: justify;
-    color: white;
-    
-}
-/* In your about.css file */
 .contact p {
-    display: flex;
-    align-items: center;
-    margin: 25px 10px;
-  }
-  
-  .contact a {
-    margin-left: 10px;
-    color: white; /* You can change the color */
-  }
-  
-  .contact svg {
-    font-size: 20px;
-    margin-right: 20px;
-  }
-  
-  .education {
-    align-items: center; 
-    justify-content: space-between; 
-    width: 70%; 
-    max-width: 1200px; 
-    margin: auto; 
-    padding: 20px; /* Add some padding around the container */
-    transition: transform 0.5s ease;
-  }
-  
-  .education h1 {
-    font-size: 50px;
-    text-align: center;
-    color: #00ffb3;
-    margin: 10px;
-    margin-bottom: 30px;
-  }
-  
-  .education p {
-    font-size: 22px;
-    text-align: justify;
-    color: white;
-    margin-top: 20px;
-  }
-  
-  .education p img {
-    width: 80px; /* Logo size */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 15px; /* Space between logo and text */
-    border-radius: 5px; /* Slightly rounded corners for logos */
-    transition: transform 0.3s ease; /* Smooth hover effect */
-    margin-bottom: 10px;
-  }
-  
-.education p strong {
-    color: white;
-    padding-bottom: 50px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+  font-size: clamp(14px, 1.8vw, 19px);
+  color: white;
+  line-height: 1.5;
 }
 
-.extra-curricular, .awards {
-    padding: 20px;
-    background-color: #fdfdfd;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px 0;
+.contact a {
+  color: #00ffb3;
+  text-decoration: none;
+  word-break: break-all;
+  transition: color 0.2s ease;
+}
+
+.contact a:hover {
+  color: #ffffff;
+}
+
+.contact svg {
+  font-size: 20px;
+  flex-shrink: 0;
+  color: #00ffb3;
+}
+
+/* ─── Education section ─────────────────────────────────────────── */
+.education {
+  margin-top: 20px;
+}
+
+/* ─── Individual education card ─────────────────────────────────── */
+.edu-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(0, 255, 179, 0.12);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.edu-card:hover {
+  border-color: rgba(0, 255, 179, 0.35);
+  background: rgba(0, 255, 179, 0.05);
+}
+
+/* Logo link wrapper */
+.edu-logo-link {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Logo image */
+.edu-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: white;
+  padding: 4px;
+  transition: transform 0.25s ease;
+}
+
+.edu-logo:hover {
+  transform: scale(1.08);
+}
+
+/* Text block: degree / institution / year stacked */
+.edu-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0; /* allow text to wrap inside flex */
+}
+
+.edu-degree {
+  color: #00ffb3;
+  font-size: clamp(14px, 2vw, 17px);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.edu-institution {
+  color: #c8d8e8;
+  font-size: clamp(13px, 1.8vw, 15px);
+  line-height: 1.4;
+}
+
+.edu-year {
+  color: #7a8fa6;
+  font-size: clamp(12px, 1.6vw, 13px);
+  font-style: italic;
+}
+
+/* ─── Mobile: tighten card padding ─────────────────────────────── */
+@media (max-width: 480px) {
+  .edu-card {
+    padding: 12px 14px;
+    gap: 14px;
   }
-  
-  .extra-curricular h1, .awards h1 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
-    text-align: center;
+
+  .edu-logo {
+    width: 48px;
+    height: 48px;
   }
-  
-  .extra-curricular ul, .awards ul {
-    list-style-type: disc;
-    padding-left: 40px;
-    font-size: 1.2rem;
-    color: #555;
-  }
-  
-  .extra-curricular ul li, .awards ul li {
-    margin-bottom: 10px;
-  }
-  
-  .extra-curricular ul li strong, .awards ul li strong {
-    color: #0073e6;
-  }
-  
+}
 
 
+/* ─── Technical Skills section ──────────────────────────────────── */
+.skills {
+  margin-top: 20px;
+}
 
+.skills p {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 14px 0;
+  font-size: clamp(14px, 1.8vw, 17px);
+  color: #d0dce8;
+  line-height: 1.7;
+}
 
+.skills p strong {
+  color: #00ffb3;
+  font-weight: 700;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
 
-.about, .contact, .education, .techSkills {
-    opacity: 0;
-    transform: translateX(50px); /* Start from right side */
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+/* ─── Mobile ───────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .about,
+  .contact,
+  .education,
+  .skills {
+    padding: 18px 16px;
   }
-  
-  /* When scrolled into view, apply these styles */
-  .in-view {
-    opacity: 1;
-    transform: translateX(0); /* Move to original position */
-  }
-  
-  .out-of-view {
-    opacity: 0;
-    transform: translateX(50px); /* Move out to right side */
-  }
- 
 
-  
+  .about p {
+    font-size: 15px;
+    text-align: left;
+  }
+
+  .contact p {
+    font-size: 15px;
+    flex-wrap: wrap;
+    word-break: break-word;
+  }
+
+  .skills p {
+    font-size: 14px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ─── Small mobile ──────────────────────────────────────────────── */
+@media (max-width: 400px) {
+  .about h1,
+  .contact h1,
+  .education h1 {
+    font-size: 22px;
+  }
+
+  .contact svg {
+    font-size: 16px;
+  }
+}

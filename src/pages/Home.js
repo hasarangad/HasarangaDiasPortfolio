@@ -65,7 +65,7 @@ export default function Home() {
                         <p>{content.description}</p>
                         <p>{content.details}</p>
                     </div>
-                    <button onClick={handleDownload}>Download CV</button>
+                    <button className="download-btn" onClick={handleDownload}>Download CV</button>
                 </div>
                 <div className="profile-container">
                     <div className="rotating-border"></div>
