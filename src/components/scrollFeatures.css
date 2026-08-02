@@ -1,0 +1,71 @@
+/* ─── Scroll Reading Progress Bar ───────────────────────────────── */
+.scroll-progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3.5px;
+  background: rgba(255, 255, 255, 0.05);
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #00ffb3 0%, #00e1d9 50%, #00b4d8 100%);
+  box-shadow: 0 0 10px rgba(0, 255, 179, 0.7), 0 0 20px rgba(0, 255, 179, 0.4);
+  transition: width 0.1s cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+/* ─── Floating Back to Top Button ───────────────────────────────── */
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(20, 25, 35, 0.85);
+  border: 1.5px solid rgba(0, 255, 179, 0.5);
+  color: #00ffb3;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 255, 179, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.85);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-to-top--visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.scroll-to-top-btn:hover {
+  background: #00ffb3;
+  color: #0d1117;
+  border-color: #00ffb3;
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 255, 179, 0.6);
+}
+
+.scroll-to-top-btn:active {
+  transform: translateY(-1px) scale(0.96);
+}
+
+@media (max-width: 600px) {
+  .scroll-to-top-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}

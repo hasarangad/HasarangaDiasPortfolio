@@ -21,7 +21,7 @@ const ParticlesComponent = (props) => {
     () => ({
       fullScreen: {
         enable: true,
-        zIndex: -1,
+        zIndex: 0,
       },
       background: {
         color: {
@@ -42,10 +42,13 @@ const ParticlesComponent = (props) => {
         },
         modes: {
           push: {
-            quantity: 4,
+            quantity: 3,
           },
           grab: {
-            distance: 150,
+            distance: 140,
+            links: {
+              opacity: 0.8,
+            },
           },
         },
       },
@@ -55,9 +58,9 @@ const ParticlesComponent = (props) => {
         },
         links: {
           color: "#FFFFFF",
-          distance: 150,
+          distance: 140,
           enable: true,
-          opacity: 0.3,
+          opacity: 0.35,
           width: 1,
         },
         move: {
@@ -67,23 +70,23 @@ const ParticlesComponent = (props) => {
             default: "bounce",
           },
           random: true,
-          speed: 1,
+          speed: 1.2,
           straight: false,
         },
         number: {
           density: {
             enable: true,
           },
-          value: 120,
+          value: 95,
         },
         opacity: {
-          value: 0.8,
+          value: 0.85,
         },
         shape: {
           type: "circle",
         },
         size: {
-          value: { min: 1, max: 3 },
+          value: { min: 1.5, max: 3.5 },
         },
       },
       detectRetina: true,
@@ -93,7 +96,11 @@ const ParticlesComponent = (props) => {
 
   if (!init) return null;
 
-  return <Particles id={props.id || "tsparticles"} particlesLoaded={particlesLoaded} options={options} />;
+  return (
+    <div style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}>
+      <Particles id={props.id || "tsparticles"} particlesLoaded={particlesLoaded} options={options} />
+    </div>
+  );
 };
 
 export default ParticlesComponent;

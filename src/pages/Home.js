@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import pp from '../images/pp.png';
 import './home.css';
-import '../output.css';
 import ParticleBackground from './particles.js';
 import cv from '../cv/Hasaranga Dias.pdf';
 
@@ -28,33 +27,22 @@ export default function Home() {
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-            setIsTransitioning(true); 
+            setIsTransitioning(true);
             setTimeout(() => {
                 setContent(prevContent => (prevContent === initialContent ? newContent : initialContent));
-                setIsTransitioning(false); 
-            }, 500); 
-        }, 15000); 
+                setIsTransitioning(false);
+            }, 500);
+        }, 5000);
 
-        
         return () => clearInterval(intervalId);
     }, []);
 
-    
-    const handleDownload = () => {
-        const link = document.createElement('a');
-        link.href = cv; 
-        link.download = 'Hasaranga_Dias_CV.pdf'; 
-        link.click(); 
-    };
-
     return (
-        <>
-            <div className="App">
-                <Navbar />
-            </div>
+        <div className="home-page-wrapper">
+            <Navbar />
+            <ParticleBackground />
 
-            <div className="container">
-                <ParticleBackground />
+            <main className="container">
                 <div className="content">
                     <div>
                         <p>I'm</p>
@@ -65,13 +53,20 @@ export default function Home() {
                         <p>{content.description}</p>
                         <p>{content.details}</p>
                     </div>
-                    <button className="download-btn" onClick={handleDownload}>Download CV</button>
+                    <a 
+                        href={cv} 
+                        download="Hasaranga_Dias_CV.pdf" 
+                        className="download-btn"
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                    >
+                        Download CV
+                    </a>
                 </div>
                 <div className="profile-container">
-                    <div className="rotating-border"></div>
-                    <img className="profile-photo" src={pp} alt="Profile" />
+                    <img className="profile-photo" src={pp} alt="Profile of Hasaranga Dias" />
                 </div>
-            </div>
-        </>
+            </main>
+        </div>
     );
 }

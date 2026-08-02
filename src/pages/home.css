@@ -13,42 +13,69 @@ body {
   box-sizing: inherit;
 }
 
+/* ─── Keyframe Animations ───────────────────────────────────────── */
+@keyframes profilePulse {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.45), 0 0 50px rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(255, 255, 255, 0.8), 0 0 85px rgba(255, 255, 255, 0.4);
+    border-color: #ffffff;
+  }
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ─── Hero Container ────────────────────────────────────────────── */
 .container {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: min(90%, 1100px);
-  margin: 40px auto 60px;
-  padding: 20px;
-  gap: 40px;
+  width: min(94%, 1380px);
+  margin: 50px auto 70px;
+  padding: 24px;
+  gap: 50px;
+  animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* ─── Text Content ──────────────────────────────────────────────── */
 .content {
   flex: 1;
   min-width: 0;
-  padding-right: 20px;
+  padding-right: 30px;
   color: white;
 }
 
 .content p {
-  margin: 6px 0;
-  font-size: clamp(14px, 2vw, 18px);
-  line-height: 1.6;
+  margin: 8px 0;
+  font-size: clamp(16px, 1.35vw, 21px);
+  line-height: 1.7;
 }
 
 .name {
   color: #00ffb3;
-  font-size: clamp(22px, 4vw, 42px);
+  font-size: clamp(26px, 3.8vw, 48px);
   line-height: 1.2;
   word-break: break-word;
+  text-shadow: 0 0 20px rgba(0, 255, 179, 0.35);
 }
 
 /* ─── Animated section ──────────────────────────────────────────── */
 .transition-content h1 {
-  font-size: clamp(18px, 3vw, 32px);
-  margin: 10px 0 6px;
+  font-size: clamp(20px, 2.5vw, 36px);
+  margin: 14px 0 8px;
 }
 
 .transition-content {
@@ -70,10 +97,17 @@ body {
 .profile-container {
   position: relative;
   flex-shrink: 0;
-  width: clamp(180px, 28vw, 320px);
-  height: clamp(180px, 28vw, 320px);
+  width: clamp(220px, 26vw, 380px);
+  height: clamp(220px, 26vw, 380px);
   border-radius: 50%;
   overflow: hidden;
+  border: 3.5px solid rgba(255, 255, 255, 0.75);
+  animation: profilePulse 4s infinite ease-in-out;
+  transition: transform 0.35s ease;
+}
+
+.profile-container:hover {
+  transform: scale(1.035);
 }
 
 .profile-photo {
@@ -86,19 +120,29 @@ body {
 /* ─── Download button ───────────────────────────────────────────── */
 .download-btn {
   color: black;
-  background-color: #00ffb3;
-  border-radius: 10px;
-  padding: 8px 20px;
-  border: 1px solid #ddd;
-  font-size: clamp(13px, 1.8vw, 16px);
+  background: #00ffb3;
+  border-radius: 12px;
+  padding: 12px 28px;
+  border: none;
+  font-size: clamp(14px, 1.2vw, 17px);
+  font-weight: 700;
   font-family: Arial, Helvetica, sans-serif;
-  margin-top: 14px;
+  margin-top: 22px;
   cursor: pointer;
-  transition: background 0.25s ease;
+  box-shadow: 0 4px 16px rgba(0, 255, 179, 0.35);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  text-align: center;
 }
 
 .download-btn:hover {
-  background: linear-gradient(90deg, #ffffff 40%, #00ffb3 90%);
+  background: #ffffff;
+  color: #000000;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 28px rgba(0, 255, 179, 0.6);
 }
 
 /* ─── Tablet ────────────────────────────────────────────────────── */
@@ -107,7 +151,7 @@ body {
     flex-direction: column-reverse;
     align-items: center;
     text-align: center;
-    gap: 24px;
+    gap: 28px;
     margin-top: 24px;
   }
 
@@ -117,37 +161,36 @@ body {
   }
 
   .profile-container {
-    width: clamp(150px, 50vw, 250px);
-    height: clamp(150px, 50vw, 250px);
+    width: clamp(180px, 45vw, 280px);
+    height: clamp(180px, 45vw, 280px);
   }
 
   .download-btn {
     width: auto;
-    min-width: 160px;
+    min-width: 170px;
   }
 }
 
 /* ─── Mobile ────────────────────────────────────────────────────── */
 @media (max-width: 480px) {
   .container {
-    padding: 12px;
-    margin-top: 16px;
-    gap: 16px;
+    padding: 14px;
+    margin-top: 18px;
+    gap: 18px;
   }
 
   .name {
-    font-size: clamp(18px, 6vw, 26px);
+    font-size: clamp(20px, 6vw, 28px);
   }
 
   .profile-container {
-    width: 160px;
-    height: 160px;
+    width: 180px;
+    height: 180px;
   }
 
   .download-btn {
-    width: 80%;
-    font-size: 14px;
-    padding: 10px;
+    width: 85%;
+    font-size: 15px;
+    padding: 12px;
   }
 }
-
