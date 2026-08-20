@@ -5,7 +5,7 @@ import ParticleBackground from './particles.js';
 import {
   FaEnvelope, FaFacebook, FaInstagram, FaLinkedin,
   FaGithub, FaTwitter, FaPhoneAlt, FaYoutube,
-  FaCrown, FaCoins, FaMedal,
+  FaCoins, FaMedal,
   FaShieldAlt, FaCode, FaServer, FaCloud, FaCertificate
 } from 'react-icons/fa';
 import ousl from '../images/ousl_logo.jpg';
