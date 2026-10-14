@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/HasarangaDiasPortfolio/static/css/main.10f3638a.css",
-    "main.js": "/HasarangaDiasPortfolio/static/js/main.5afffcc9.js",
-    "static/js/453.83234151.chunk.js": "/HasarangaDiasPortfolio/static/js/453.83234151.chunk.js",
-    "static/media/pp.png": "/HasarangaDiasPortfolio/static/media/pp.73effe43c376bd0559da.png",
-    "static/media/Hasaranga Dias.pdf": "/HasarangaDiasPortfolio/static/media/Hasaranga Dias.37887a250eee2f1958a6.pdf",
-    "static/media/focsec.jpeg": "/HasarangaDiasPortfolio/static/media/focsec.81f8b8188049837c8a16.jpeg",
-    "static/media/kiu_logo.png": "/HasarangaDiasPortfolio/static/media/kiu_logo.290340d139cee646559b.png",
-    "index.html": "/HasarangaDiasPortfolio/index.html",
-    "main.10f3638a.css.map": "/HasarangaDiasPortfolio/static/css/main.10f3638a.css.map",
-    "main.5afffcc9.js.map": "/HasarangaDiasPortfolio/static/js/main.5afffcc9.js.map",
-    "453.83234151.chunk.js.map": "/HasarangaDiasPortfolio/static/js/453.83234151.chunk.js.map"
+    "main.css": "./static/css/main.e9405549.css",
+    "main.js": "./static/js/main.5ca3637e.js",
+    "static/js/453.83234151.chunk.js": "./static/js/453.83234151.chunk.js",
+    "static/media/pp.png": "./static/media/pp.73effe43c376bd0559da.png",
+    "static/media/Hasaranga Dias.pdf": "./static/media/Hasaranga Dias.37887a250eee2f1958a6.pdf",
+    "static/media/focsec.jpeg": "./static/media/focsec.81f8b8188049837c8a16.jpeg",
+    "static/media/kiu_logo.png": "./static/media/kiu_logo.290340d139cee646559b.png",
+    "index.html": "./index.html",
+    "main.e9405549.css.map": "./static/css/main.e9405549.css.map",
+    "main.5ca3637e.js.map": "./static/js/main.5ca3637e.js.map",
+    "453.83234151.chunk.js.map": "./static/js/453.83234151.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.10f3638a.css",
-    "static/js/main.5afffcc9.js"
+    "static/css/main.e9405549.css",
+    "static/js/main.5ca3637e.js"
   ]
 }
