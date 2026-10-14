@@ -11,8 +11,8 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const projectDetails = {
-    "TRIGUARDOPS — DEVSECOPS PLATFORM": {
-      description: "Unified security scanning pipeline integrating SAST, DAST, and IaC scanning — Final Year Project, KIU University.",
+    "TRIGUARDOPS (DEVSECOPS PLATFORM)": {
+      description: "Unified security scanning pipeline integrating SAST, DAST, and IaC scanning. Final Year Project, KIU University.",
       category: "🔒 Cybersecurity · Featured",
       additionalInfo: [
         "Integrated Semgrep (SAST), OWASP ZAP (DAST), and Checkov (IaC) into a single GitLab CI/CD pipeline",
@@ -20,11 +20,11 @@ export default function Projects() {
         "Deployed on AWS EC2 with Nginx + Gunicorn; AI model (CodeT5, BLEU 57.51) proposes automated fixes",
         "Tech stack: Flask, React, PostgreSQL, AWS EC2, Nginx, Gunicorn, GitLab CI/CD"
       ],
-      moreInfo: "TriGuardOps is a final year project at KIU University — a unified DevSecOps security scanning platform that integrates SAST (Semgrep), DAST (OWASP ZAP), and IaC scanning (Checkov) into a single GitLab CI/CD pipeline. A Python-based decision engine classifies vulnerabilities by severity and issues BLOCK / WARN / PASS verdicts, giving developers a structured way to act on findings. The full stack (Flask, React, PostgreSQL) is deployed on AWS EC2 with Nginx and Gunicorn, and extended with a fine-tuned AI model (CodeT5, achieving a BLEU score of 57.51) that proposes automated fixes for detected vulnerabilities, making security remediation faster and more actionable.",
+      moreInfo: "TriGuardOps is a final year project at KIU University, a unified DevSecOps security scanning platform that integrates SAST (Semgrep), DAST (OWASP ZAP), and IaC scanning (Checkov) into a single GitLab CI/CD pipeline. A Python-based decision engine classifies vulnerabilities by severity and issues BLOCK / WARN / PASS verdicts, giving developers a structured way to act on findings. The full stack (Flask, React, PostgreSQL) is deployed on AWS EC2 with Nginx and Gunicorn, and extended with a fine-tuned AI model (CodeT5, achieving a BLEU score of 57.51) that proposes automated fixes for detected vulnerabilities, making security remediation faster and more actionable.",
       githubLink: null
     },
     "AI-DRIVEN PHISHING DETECTION SYSTEM": {
-      description: "Machine learning driven solution to identify phishing attempts in emails and web platforms — Research Ongoing, Group Project, KIU University.",
+      description: "Machine learning driven solution to identify phishing attempts in emails and web platforms. Research Ongoing, Group Project, KIU University.",
       category: "🔒 Cybersecurity · Research",
       additionalInfo: [
         "Uses supervised machine learning to detect phishing in emails and web-based platforms",
@@ -42,7 +42,7 @@ export default function Projects() {
         "Techniques: LLMNR poisoning, BloodHound enumeration, credential dumping (ProcDump/pypykatz), Pass the Hash, Kerberoasting, AS-REP Roasting, DCSync, Golden Ticket, RBCD delegation abuse, AD CS ESC1",
         "Documented detection and disruption strategies for each attack stage"
       ],
-      moreInfo: "This lab project involved building a fully functional 3-VM environment (Windows Server 2019 DC, Windows 10, and Kali Linux) and executing 10 real-world Active Directory attack techniques. The attacks covered the full kill chain: LLMNR poisoning, BloodHound enumeration, credential dumping using ProcDump and pypykatz, Pass the Hash, Kerberoasting, AS-REP Roasting, DCSync, Golden Ticket attacks, RBCD delegation abuse, and AD CS ESC1 exploitation. Each attack stage was documented with practical insight into how attackers move through enterprise networks and how each stage can be detected and disrupted — building deep hands-on knowledge of offensive and defensive Active Directory security.",
+      moreInfo: "This lab project involved building a fully functional 3-VM environment (Windows Server 2019 DC, Windows 10, and Kali Linux) and executing 10 real-world Active Directory attack techniques. The attacks covered the full kill chain: LLMNR poisoning, BloodHound enumeration, credential dumping using ProcDump and pypykatz, Pass the Hash, Kerberoasting, AS-REP Roasting, DCSync, Golden Ticket attacks, RBCD delegation abuse, and AD CS ESC1 exploitation. Each attack stage was documented with practical insight into how attackers move through enterprise networks and how each stage can be detected and disrupted, building deep hands-on knowledge of offensive and defensive Active Directory security.",
       githubLink: null
     },
     "NETWORK PENETRATION TESTING (METASPLOITABLE 2)": {
@@ -53,7 +53,7 @@ export default function Projects() {
         "Exploitation using Metasploit against Metasploitable 2",
         "Documented full attack chain: scanning → exploitation → privilege escalation"
       ],
-      moreInfo: "This penetration testing lab used Nmap for reconnaissance and service enumeration against a Metasploitable 2 target, followed by Metasploit to identify and exploit vulnerabilities. The full attack chain was thoroughly documented — from initial scanning and enumeration, through exploitation of specific services, to privilege escalation achieving root access. This project provided hands-on experience with industry-standard penetration testing tools and methodologies, reinforcing both offensive security techniques and the documentation practices required in professional security engagements.",
+      moreInfo: "This penetration testing lab used Nmap for reconnaissance and service enumeration against a Metasploitable 2 target, followed by Metasploit to identify and exploit vulnerabilities. The full attack chain was thoroughly documented, from initial scanning and enumeration, through exploitation of specific services, to privilege escalation achieving root access. This project provided hands-on experience with industry-standard penetration testing tools and methodologies, reinforcing both offensive security techniques and the documentation practices required in professional security engagements.",
       githubLink: null
     },
     "DIGITAL FORENSICS INVESTIGATION (AUTOPSY)": {
@@ -68,7 +68,7 @@ export default function Projects() {
       githubLink: null
     },
     "LINUX & NETWORK ADMINISTRATION LAB": {
-      description: "Configured static networking, a BIND9 DNS server, hardened SSH access, and implemented firewall rules — documented in formal lab reports.",
+      description: "Configured static networking, a BIND9 DNS server, hardened SSH access, and implemented firewall rules, documented in formal lab reports.",
       category: "🧪 Cybersecurity Lab",
       additionalInfo: [
         "Configured static networking using Netplan",

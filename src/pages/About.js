@@ -94,7 +94,7 @@ export default function About() {
               <img src={rcg} alt="Richmond College Logo" className="edu-logo" />
             </a>
             <div className="edu-info">
-              <strong className="edu-degree">Advanced Level — Physical Science</strong>
+              <strong className="edu-degree">Advanced Level (Physical Science)</strong>
               <span className="edu-institution">Richmond College, Galle, Sri Lanka</span>
               <span className="edu-year">Completed: 2020</span>
             </div>
@@ -167,12 +167,23 @@ export default function About() {
             </div>
             <div className="skill-badges">
               {[
-                'TryHackMe (14 Rooms — DevSecOps, OWASP Top 10, Network Security, Docker, IaC)',
-                'AWS Educate (IAM, S3, EC2, VPC, RDS, Lambda, CloudWatch)',
-                'HackerRank (Python, Linux Shell, Java, SQL)',
-                'SoloLearn (10 Programming Certifications)'
+                { label: 'TryHackMe: DevSecOps Pathway (Certified)', url: 'https://tryhackme.com/certificate/THM-MKDXHZRW3L' },
+                { label: 'TryHackMe: SOC Level 1 Pathway (Certified)', url: 'https://tryhackme.com/certificate/THM-3H8I1UKAX7' },
+                { label: 'HackerRank: All Badges & Certificates (hasarangadias)', url: 'https://www.hackerrank.com/profile/hasarangadias' },
+                { label: 'AWS Educate (IAM, S3, EC2, VPC, RDS, Lambda, CloudWatch)', url: 'https://aws.amazon.com/education/awseducate/' },
+                { label: 'SoloLearn: 10 Programming Certifications (Profile: 24436916)', url: 'https://www.sololearn.com/en/profile/24436916' }
               ].map(cert => (
-                <span key={cert} className="skill-pill cert-pill">{cert}</span>
+                <a
+                  key={cert.label}
+                  href={cert.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="skill-pill cert-pill"
+                  style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}
+                  title={`View ${cert.label}`}
+                >
+                  {cert.label}
+                </a>
               ))}
             </div>
           </div>

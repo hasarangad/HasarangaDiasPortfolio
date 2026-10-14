@@ -19,11 +19,15 @@ body {
   position: sticky;
   top: 0;
   z-index: 900;
-  background: transparent;
+  background: rgba(10, 12, 20, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(0, 255, 179, 0.1);
   padding: 12px 24px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 /* ── Desktop centred links ─────────────────────────────────── */
@@ -33,7 +37,7 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 48px;
+  gap: 36px;
 }
 
 .nav-desktop li a {
@@ -43,14 +47,21 @@ body {
   color: #e0e0e0;
   text-decoration: none;
   font-size: 17px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  transition: color 0.2s, background 0.2s;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: color 0.2s, background 0.2s, box-shadow 0.2s;
 }
 
 .nav-desktop li a:hover {
   color: #00ffb3;
   background: rgba(0, 255, 179, 0.08);
+}
+
+.nav-desktop li a.active {
+  color: #00ffb3;
+  background: rgba(0, 255, 179, 0.12);
+  box-shadow: inset 0 -2px 0 #00ffb3;
+  font-weight: 600;
 }
 
 /* ── Hamburger: hidden on desktop ──────────────────────── */
@@ -173,6 +184,13 @@ body {
   border-left-color: #00ffb3;
 }
 
+.nav-drawer-list li a.active {
+  color: #00ffb3;
+  background: rgba(0, 255, 179, 0.12);
+  border-left-color: #00ffb3;
+  font-weight: 600;
+}
+
 .nav-drawer-icon {
   display: flex;
   align-items: center;
@@ -181,7 +199,7 @@ body {
 }
 
 /* ════════════════════════════════════════════════════════════════
-   Mobile breakpoint — switch to drawer
+   Mobile breakpoint: switch to drawer
 ─────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   /*

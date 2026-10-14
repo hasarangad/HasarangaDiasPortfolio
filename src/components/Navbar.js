@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaHome, FaInfoCircle, FaCode, FaBars, FaTimes } from 'react-icons/fa';
+import { FaHome, FaInfoCircle, FaCode, FaCertificate, FaBars, FaTimes } from 'react-icons/fa';
 import './navbar.css';
 
 export default function Navbar() {
@@ -20,10 +20,18 @@ export default function Navbar() {
 
   const closeMenu = () => setMenuOpen(false);
 
+  const isActive = (to) => {
+    if (to === '/') {
+      return location.pathname === '/' || location.pathname === '';
+    }
+    return location.pathname.toLowerCase() === to.toLowerCase();
+  };
+
   const navLinks = [
-    { to: '/',         icon: <FaHome size={18} />,       label: 'Home'     },
-    { to: '/About',    icon: <FaInfoCircle size={18} />,  label: 'About'    },
-    { to: '/Projects', icon: <FaCode size={18} />,        label: 'Projects' },
+    { to: '/',             icon: <FaHome size={18} />,        label: 'Home'         },
+    { to: '/About',        icon: <FaInfoCircle size={18} />,   label: 'About'        },
+    { to: '/Projects',     icon: <FaCode size={18} />,         label: 'Projects'     },
+    { to: '/Certificates', icon: <FaCertificate size={18} />,  label: 'Certificates' },
   ];
 
   return (
@@ -33,7 +41,7 @@ export default function Navbar() {
           ★ IMPORTANT: hamburger comes FIRST in DOM order.
           On mobile the desktop ul is display:none, so the hamburger
           is the ONLY flex child. With justify-content:flex-start it
-          lands at the far left — no absolute / fixed tricks needed.
+          lands at the far left, no absolute / fixed tricks needed.
         */}
         <button
           className="nav-hamburger"
@@ -47,7 +55,7 @@ export default function Navbar() {
         <ul className="nav-desktop">
           {navLinks.map(({ to, icon, label }) => (
             <li key={to}>
-              <Link to={to}>
+              <Link to={to} className={isActive(to) ? 'active' : ''}>
                 {icon}
                 <span>{label}</span>
               </Link>
@@ -74,7 +82,11 @@ export default function Navbar() {
         <ul className="nav-drawer-list">
           {navLinks.map(({ to, icon, label }) => (
             <li key={to}>
-              <Link to={to} onClick={closeMenu}>
+              <Link
+                to={to}
+                onClick={closeMenu}
+                className={isActive(to) ? 'active' : ''}
+              >
                 <span className="nav-drawer-icon">{icon}</span>
                 {label}
               </Link>
