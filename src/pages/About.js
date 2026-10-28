@@ -167,10 +167,12 @@ export default function About() {
             </div>
             <div className="skill-badges">
               {[
+                { label: '🎖️ TryHackMe: Security Analyst Level 1 (SAL1) - Industry Certified', url: 'https://www.credly.com/badges/78d13846-d2cc-4bdd-9821-2c2b21b76f6e', isIndustry: true },
                 { label: 'TryHackMe: DevSecOps Pathway (Certified)', url: 'https://tryhackme.com/certificate/THM-MKDXHZRW3L' },
                 { label: 'TryHackMe: SOC Level 1 Pathway (Certified)', url: 'https://tryhackme.com/certificate/THM-3H8I1UKAX7' },
                 { label: 'HackerRank: All Badges & Certificates (hasarangadias)', url: 'https://www.hackerrank.com/profile/hasarangadias' },
-                { label: 'AWS Educate (IAM, S3, EC2, VPC, RDS, Lambda, CloudWatch)', url: 'https://aws.amazon.com/education/awseducate/' },
+                { label: 'AWS Educate: Introduction to Cloud 101 (Credly Verified)', url: 'https://www.credly.com/badges/f02d5ca0-244e-4569-bbab-9b2a5db79b21/public_url' },
+                { label: 'AWS Educate: Getting Started with Databases (Credly Verified)', url: 'https://www.credly.com/badges/b11b2add-dec6-40a8-84c7-d38bccc7f832/public_url' },
                 { label: 'SoloLearn: 10 Programming Certifications (Profile: 24436916)', url: 'https://www.sololearn.com/en/profile/24436916' }
               ].map(cert => (
                 <a
@@ -178,7 +180,7 @@ export default function About() {
                   href={cert.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="skill-pill cert-pill"
+                  className={`skill-pill cert-pill ${cert.isIndustry ? 'cert-pill-industry' : ''}`}
                   style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}
                   title={`View ${cert.label}`}
                 >

@@ -9,19 +9,84 @@ import {
   FaUniversity,
   FaLayerGroup,
   FaBook,
-  FaIdCard
+  FaIdCard,
+  FaAward,
+  FaShieldAlt,
+  FaGraduationCap,
+  FaFilePdf
 } from 'react-icons/fa';
 import {
   SiTryhackme,
   SiAmazonwebservices,
   SiHackerrank,
-  SiSololearn
+  SiSololearn,
+  SiCredly
 } from 'react-icons/si';
 import './certificates.css';
 
 const CERTIFICATES_DATA = [
+  // ── 1. Industry Valid & Professional Certifications ──────────
+  {
+    id: 'thm-sal1',
+    tier: 'industry',
+    tierLabel: 'Industry-Valid Certification',
+    title: 'TryHackMe: Security Analyst Level 1 (SAL1)',
+    issuer: 'TryHackMe',
+    category: 'Cybersecurity & DevSecOps',
+    categoryFilter: 'cybersecurity',
+    credentialId: '6ad71bc15d8ac44bf495f77f',
+    credlyBadgeId: '78d13846-d2cc-4bdd-9821-2c2b21b76f6e',
+    icon: <SiTryhackme />,
+    badgeImage: 'https://images.credly.com/images/fc0df734-6716-45ba-8563-9fd0eba18373/linkedin_thumb_blob',
+    badgeText: 'Industry Certified (No Expiration)',
+    date: 'Issued Oct 21, 2026',
+    description: 'Officially certified Security Analyst Level 1 (SAL1). Validates real-world Tier 1 SOC competencies through a rigorous proctored exam featuring simulated enterprise alert triage, log investigation, and threat reporting.',
+    tags: ['SAL1 Certified', 'SOC Level 1', 'Industry Exam', 'SIEM & Splunk', 'Incident Response', 'Alert Triage', 'Log Forensics', 'MITRE ATT&CK'],
+    keyHighlights: [
+      'Enterprise SOC Simulator: Real-time alert triage, incident containment, and evidence gathering within live SOC simulator',
+      'SIEM Operations & Log Forensics: Querying, event correlation, and anomaly detection using Splunk and SIEM platforms',
+      'Phishing & Malware Analysis: Email header inspection, attachment analysis, malicious URL extraction, and IoC hunting',
+      'Threat Intelligence & Frameworks: Tactical application of the Cyber Kill Chain, Diamond Model, and MITRE ATT&CK matrix',
+      'Actionable Incident Documentation: Crafting structured SOC incident tickets, escalation briefs, and remediation reports',
+      'Proctored Practical Assessment: Timed practical examination proving hands-on analyst capability beyond theoretical knowledge'
+    ],
+    detailedOverview: 'Awarded the official TryHackMe Security Analyst Level 1 (SAL1) certification. This industry-recognized, practical credential validates readiness for live Security Operations Center (SOC) environments. Unlike standard multiple-choice tests, the SAL1 examination requires candidates to resolve complex, realistic cyber incidents in a simulated enterprise SOC—triaging alerts, extracting forensic evidence, identifying threat vectors, and delivering actionable incident reports under timed operational constraints.',
+    credentialUrl: 'https://www.credly.com/badges/78d13846-d2cc-4bdd-9821-2c2b21b76f6e',
+    credentialLabel: 'Verify on Credly',
+    pdfUrl: 'https://assets.tryhackme.com/certification-certificate/6ad71bc15d8ac44bf495f77f.pdf',
+    pdfLabel: 'View Certificate (PDF)'
+  },
+  {
+    id: 'idm-diploma',
+    tier: 'industry',
+    tierLabel: 'Accredited Academic Qualification',
+    title: 'Diploma in Office Applications & Web Development',
+    issuer: 'IDM Southern Campus',
+    category: 'Programming & Software',
+    categoryFilter: 'programming',
+    credentialId: 'IDM-DIPLOMA-2022',
+    icon: <FaUniversity />,
+    badgeText: 'Accredited Diploma (2022)',
+    date: 'Completed in 2022',
+    description: 'Accredited institutional diploma covering web application creation with Adobe Dreamweaver, graphic design with Adobe Photoshop, and full Microsoft Office enterprise suite applications.',
+    tags: ['Adobe Dreamweaver', 'Adobe Photoshop', 'MS Office Suite', 'Web Creation', 'Graphic Design', 'Accredited Diploma'],
+    keyHighlights: [
+      'Web application creation, visual page layout, and site architecture with Adobe Dreamweaver',
+      'Graphic design, digital image editing, and visual asset production in Adobe Photoshop',
+      'Comprehensive Microsoft Office software mastery: MS Word, MS Excel, MS PowerPoint, and MS Access',
+      'Relational database management, data entry, and structured business documentation workflows',
+      'Foundations of HTML, CSS, frontend styling, and responsive digital media design'
+    ],
+    detailedOverview: 'Awarded the Diploma in Office Applications and Web Development from IDM Southern Campus in 2022. The curriculum provided intensive, practical training in designing and building web applications using Adobe Dreamweaver, crafting professional digital graphics with Adobe Photoshop, and leveraging the complete Microsoft Office suite (Word, Excel, PowerPoint, Access) for enterprise productivity, data management, and business operations.',
+    credentialUrl: 'https://www.idm.edu/',
+    credentialLabel: 'Visit IDM Campus'
+  },
+
+  // ── 2. Learning Pathways, Free Tracks & Verified Badges ───────
   {
     id: 'thm-devsecops',
+    tier: 'learning',
+    tierLabel: 'Learning Pathway Certificate',
     title: 'TryHackMe: DevSecOps Pathway Certificate',
     issuer: 'TryHackMe',
     category: 'Cybersecurity & DevSecOps',
@@ -46,6 +111,8 @@ const CERTIFICATES_DATA = [
   },
   {
     id: 'thm-soc-l1',
+    tier: 'learning',
+    tierLabel: 'Learning Pathway Certificate',
     title: 'TryHackMe: SOC Level 1 Pathway Certificate',
     issuer: 'TryHackMe',
     category: 'Cybersecurity & DevSecOps',
@@ -69,31 +136,63 @@ const CERTIFICATES_DATA = [
     credentialLabel: 'Verify SOC L1 Certificate'
   },
   {
-    id: 'aws-educate',
-    title: 'AWS Educate: Cloud Computing & Architecture',
-    issuer: 'Amazon Web Services (AWS)',
+    id: 'aws-educate-cloud-101',
+    tier: 'learning',
+    tierLabel: 'AWS Educate Training Badge',
+    title: 'AWS Educate: Introduction to Cloud 101',
+    issuer: 'Amazon Web Services Training & Certification',
     category: 'Cloud Computing',
     categoryFilter: 'cloud',
-    credentialId: 'AWS-EDUCATE-CLOUD',
+    credentialId: 'f02d5ca0-244e-4569-bbab-9b2a5db79b21',
+    credlyBadgeId: 'f02d5ca0-244e-4569-bbab-9b2a5db79b21',
     icon: <SiAmazonwebservices />,
-    badgeText: 'Cloud Architecture Essentials',
-    date: 'Completed Training',
-    description: 'Foundational training in AWS core architecture, compute provisioning, secure identity management, and distributed databases.',
-    tags: ['AWS IAM', 'Amazon EC2', 'Amazon S3', 'Amazon VPC', 'RDS', 'Lambda', 'CloudWatch'],
+    badgeImage: 'https://images.credly.com/images/e51a8579-188d-4363-8ed1-12ad164ef57b/linkedin_thumb_blob',
+    badgeText: 'Verified AWS Training Badge',
+    date: 'Issued Jun 10, 2025',
+    description: 'Earners of this badge have completed the Cloud Computing 101 training and achieved required scores on the post-course assessment. Demonstrates practical ability to create cloud applications in a virtual lab environment and core understanding of AWS cloud services.',
+    tags: ['AWS Cloud 101', 'Cloud Architecture', 'Amazon EC2', 'Amazon S3', 'AWS IAM', 'Cloud Fundamentals'],
     keyHighlights: [
-      'Identity and Access Management (IAM): Role-based access and least privilege policies',
-      'Amazon EC2: Elastic compute instance deployment and security group configuration',
-      'Amazon S3: Scalable object storage, bucket access policies, and lifecycle management',
-      'Amazon VPC: Virtual private cloud networking, subnets, route tables, and gateways',
-      'Amazon RDS: Managed relational database provisioning and high availability',
-      'AWS Lambda & CloudWatch: Serverless execution and infrastructure observability'
+      'Fundamental understanding of AWS cloud architecture, value proposition, and global infrastructure',
+      'Compute, storage, and networking: Amazon EC2 instances, S3 buckets, and virtual private clouds',
+      'Security baselines: Identity and Access Management (IAM), access policies, and shared responsibility model',
+      'Hands-on virtual lab execution: Building and testing functional cloud environments',
+      'Verified digital credential issued directly by Amazon Web Services Training and Certification on Credly'
     ],
-    detailedOverview: 'In-depth learning pathway through AWS Educate covering enterprise cloud architecture design, security baselines, and operational management of core AWS cloud services. Strengthened expertise in building scalable, secure, and resilient cloud infrastructures.',
-    credentialUrl: 'https://aws.amazon.com/education/awseducate/',
-    credentialLabel: 'AWS Educate Platform'
+    detailedOverview: 'Awarded the official AWS Educate Introduction to Cloud 101 Training Badge (Credential ID: f02d5ca0-244e-4569-bbab-9b2a5db79b21). Earners of this badge have completed the Cloud Computing 101 training and achieved the required scores on the post-course assessment, demonstrating the ability to create simple cloud applications in virtual lab environments and a solid grasp of AWS core services.',
+    credentialUrl: 'https://www.credly.com/badges/f02d5ca0-244e-4569-bbab-9b2a5db79b21/public_url',
+    credentialLabel: 'Verify on Credly'
+  },
+  {
+    id: 'aws-educate-databases',
+    tier: 'learning',
+    tierLabel: 'AWS Educate Training Badge',
+    title: 'AWS Educate: Getting Started with Databases',
+    issuer: 'Amazon Web Services Training & Certification',
+    category: 'Cloud Computing',
+    categoryFilter: 'cloud',
+    credentialId: 'b11b2add-dec6-40a8-84c7-d38bccc7f832',
+    credlyBadgeId: 'b11b2add-dec6-40a8-84c7-d38bccc7f832',
+    icon: <SiAmazonwebservices />,
+    badgeImage: 'https://images.credly.com/images/a08cf90b-9838-4f6c-82bd-8db85fb89dd5/linkedin_thumb_blob',
+    badgeText: 'Verified AWS Training Badge',
+    date: 'Issued Jun 22, 2025',
+    description: 'Earners of this badge have completed the Getting Started with Databases training and achieved required scores on the post-course assessment. Demonstrates practical ability to set up an Amazon RDS instance and use SQL commands to read and write to the database.',
+    tags: ['AWS Databases', 'Amazon RDS', 'Relational Databases', 'SQL Queries', 'Cloud Data'],
+    keyHighlights: [
+      'Amazon Relational Database Service (RDS): Provisioning, deploying, and configuring database engines',
+      'Database operations: Using SQL commands to create relational schemas, insert records, and execute analytical queries',
+      'Cloud database access: Managing database security groups, public/private access, and credential security',
+      'High availability and backups: Automated backups, multi-AZ considerations, and database maintenance',
+      'Verified digital credential issued directly by Amazon Web Services Training and Certification on Credly'
+    ],
+    detailedOverview: 'Awarded the official AWS Educate Getting Started with Databases Training Badge (Credential ID: b11b2add-dec6-40a8-84c7-d38bccc7f832). Earners have successfully completed the specialized database curriculum and assessments, demonstrating hands-on proficiency in provisioning Amazon RDS instances and performing structured SQL read/write operations.',
+    credentialUrl: 'https://www.credly.com/badges/b11b2add-dec6-40a8-84c7-d38bccc7f832/public_url',
+    credentialLabel: 'Verify on Credly'
   },
   {
     id: 'hackerrank',
+    tier: 'learning',
+    tierLabel: 'Domain Skill Badges',
     title: 'HackerRank: Software Engineering & Problem Solving',
     issuer: 'HackerRank',
     category: 'Programming & Software',
@@ -118,6 +217,8 @@ const CERTIFICATES_DATA = [
   },
   {
     id: 'sololearn',
+    tier: 'learning',
+    tierLabel: 'Modular Course Certificates',
     title: 'SoloLearn: 10 Software Engineering Certifications',
     issuer: 'SoloLearn',
     category: 'Programming & Software',
@@ -140,41 +241,25 @@ const CERTIFICATES_DATA = [
     detailedOverview: 'Completed a comprehensive collection of 10 curriculum certifications across programming language syntax, database design, and full-stack development on SoloLearn. All certificates and learning milestones are verified on the official profile (ID: 24436916).',
     credentialUrl: 'https://www.sololearn.com/en/profile/24436916',
     credentialLabel: 'View SoloLearn Profile & Certifications'
-  },
-  {
-    id: 'idm-diploma',
-    title: 'Diploma in Office Applications & Web Development',
-    issuer: 'IDM Southern Campus',
-    category: 'Programming & Software',
-    categoryFilter: 'programming',
-    credentialId: 'IDM-DIPLOMA-2022',
-    icon: <FaUniversity />,
-    badgeText: 'Completed: 2022',
-    date: 'Completed in 2022',
-    description: 'Comprehensive curriculum covering web application creation with Adobe Dreamweaver, graphic design with Adobe Photoshop, and full Microsoft Office suite applications.',
-    tags: ['Adobe Dreamweaver', 'Adobe Photoshop', 'MS Office Suite', 'Web Creation', 'Graphic Design'],
-    keyHighlights: [
-      'Web application creation, visual page layout, and site architecture with Adobe Dreamweaver',
-      'Graphic design, digital image editing, and visual asset production in Adobe Photoshop',
-      'Comprehensive Microsoft Office software mastery: MS Word, MS Excel, MS PowerPoint, and MS Access',
-      'Relational database management, data entry, and structured business documentation workflows',
-      'Foundations of HTML, CSS, frontend styling, and responsive digital media design'
-    ],
-    detailedOverview: 'Awarded the Diploma in Office Applications and Web Development from IDM Southern Campus in 2022. The curriculum provided intensive, practical training in designing and building web applications using Adobe Dreamweaver, crafting professional digital graphics with Adobe Photoshop, and leveraging the complete Microsoft Office suite (Word, Excel, PowerPoint, Access) for enterprise productivity, data management, and business operations.',
-    credentialUrl: 'https://www.idm.edu/',
-    credentialLabel: 'Visit IDM Campus'
   }
 ];
 
-const FILTER_OPTIONS = [
+const TIER_FILTERS = [
   { key: 'all', label: 'All Credentials', icon: <FaLayerGroup /> },
-  { key: 'cybersecurity', label: 'Cybersecurity & DevSecOps', icon: <FaCertificate /> },
+  { key: 'industry', label: 'Industry-Valid Certifications', icon: <FaAward />, highlight: true },
+  { key: 'learning', label: 'Learning Pathways & Badges', icon: <FaGraduationCap /> }
+];
+
+const CATEGORY_FILTERS = [
+  { key: 'all', label: 'All Domains', icon: <FaLayerGroup /> },
+  { key: 'cybersecurity', label: 'Cybersecurity & DevSecOps', icon: <FaShieldAlt /> },
   { key: 'cloud', label: 'Cloud Computing', icon: <SiAmazonwebservices /> },
   { key: 'programming', label: 'Programming & Software', icon: <FaBook /> }
 ];
 
 export default function Certificates() {
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [activeTier, setActiveTier] = useState('all');
+  const [activeCategory, setActiveCategory] = useState('all');
   const [selectedCert, setSelectedCert] = useState(null);
 
   useEffect(() => {
@@ -192,9 +277,103 @@ export default function Certificates() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  const filteredCerts = activeFilter === 'all'
-    ? CERTIFICATES_DATA
-    : CERTIFICATES_DATA.filter(item => item.categoryFilter === activeFilter);
+  // Filter logic
+  const industryCerts = CERTIFICATES_DATA.filter(
+    (item) => item.tier === 'industry' && (activeCategory === 'all' || item.categoryFilter === activeCategory)
+  );
+
+  const learningCerts = CERTIFICATES_DATA.filter(
+    (item) => item.tier === 'learning' && (activeCategory === 'all' || item.categoryFilter === activeCategory)
+  );
+
+  // Counts for tabs
+  const totalIndustryCount = CERTIFICATES_DATA.filter((i) => i.tier === 'industry').length;
+  const totalLearningCount = CERTIFICATES_DATA.filter((i) => i.tier === 'learning').length;
+  const totalAllCount = CERTIFICATES_DATA.length;
+
+  const renderCard = (cert) => {
+    const isIndustry = cert.tier === 'industry';
+    const isCredly = cert.credentialUrl && cert.credentialUrl.includes('credly');
+
+    return (
+      <article
+        key={cert.id}
+        className={`cert-card ${isIndustry ? 'tier-industry' : 'tier-learning'}`}
+        onClick={() => setSelectedCert(cert)}
+        tabIndex={0}
+        role="button"
+        aria-label={`View details for ${cert.title}`}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            setSelectedCert(cert);
+          }
+        }}
+      >
+        <div>
+          <div className="cert-card-top">
+            <div className="cert-card-top-left">
+              <span className={`cert-tier-badge ${cert.tier}`}>
+                {isIndustry ? <FaAward /> : <FaBook />}
+                {isIndustry ? 'Industry Valid' : 'Learning Pathway'}
+              </span>
+              <span className="cert-category-badge">{cert.category}</span>
+            </div>
+            <div className="cert-issuer-icon" aria-hidden="true">
+              {cert.icon}
+            </div>
+          </div>
+
+          <div className="cert-card-body">
+            <h3 className="cert-title">{cert.title}</h3>
+            <div className="cert-issuer-name">
+              <span>{cert.issuer}</span>
+            </div>
+            <p className="cert-description">{cert.description}</p>
+            <div className="cert-tags">
+              {cert.tags.map((tag, idx) => (
+                <span key={idx} className="cert-tag-pill">{tag}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="cert-card-footer">
+          <span className={`cert-status-badge ${cert.tier}`}>
+            <FaCheckCircle /> {cert.badgeText}
+          </span>
+          <div className="cert-card-actions-group">
+            {cert.pdfUrl && (
+              <a
+                href={cert.pdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cert-card-pdf-btn"
+                onClick={(e) => e.stopPropagation()}
+                title="View Official Certificate PDF"
+              >
+                <FaFilePdf size={12} /> PDF
+              </a>
+            )}
+            {cert.credentialUrl ? (
+              <a
+                href={cert.credentialUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`cert-card-verify-btn ${isCredly ? 'credly-btn' : ''}`}
+                onClick={(e) => e.stopPropagation()}
+                title={cert.credentialLabel || 'View Credential'}
+              >
+                {isCredly ? <SiCredly size={13} /> : <FaExternalLinkAlt size={11} />}
+                {isCredly ? 'Credly' : cert.credentialUrl.includes('profile') ? 'Profile' : 'Verify'}
+              </a>
+            ) : (
+              <span className="cert-click-hint">Click for details &rarr;</span>
+            )}
+          </div>
+        </div>
+      </article>
+    );
+  };
 
   return (
     <div className="certificates-wrapper">
@@ -204,88 +383,122 @@ export default function Certificates() {
       <header className="certificates-header">
         <h1 className="certificates-title">Certificates &amp; Credentials</h1>
         <p className="certificates-subtitle">
-          Validated certifications, hands-on cybersecurity labs, cloud computing foundations, and software engineering credentials.
+          Distinguished industry-valid certifications, accredited academic qualifications, verified cybersecurity learning pathways, and cloud problem-solving badges.
         </p>
 
-        {/* Filter Bar */}
-        <div className="cert-filters" role="tablist">
-          {FILTER_OPTIONS.map((filter) => (
+        {/* Official Credly Profile Link */}
+        <div className="credly-profile-banner">
+          <a
+            href="https://www.credly.com/users/keshan-hasaranga"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="credly-profile-btn"
+            title="View Keshan Hasaranga's Credly Profile with 3 Verified Badges"
+          >
+            <SiCredly className="credly-icon-accent" />
+            <span>Official Credly Profile: <strong>3 Verified Digital Badges</strong></span>
+            <FaExternalLinkAlt size={11} />
+          </a>
+        </div>
+
+        {/* Primary Filter: Tier Selector (Industry Valid vs Learning Pathways) */}
+        <div className="cert-tier-nav" role="tablist" aria-label="Credential validity level">
+          {TIER_FILTERS.map((tier) => {
+            const count =
+              tier.key === 'all'
+                ? totalAllCount
+                : tier.key === 'industry'
+                ? totalIndustryCount
+                : totalLearningCount;
+
+            return (
+              <button
+                key={tier.key}
+                role="tab"
+                aria-selected={activeTier === tier.key}
+                className={`cert-tier-tab ${tier.highlight ? 'tier-tab-industry' : ''} ${activeTier === tier.key ? 'active' : ''}`}
+                onClick={() => setActiveTier(tier.key)}
+              >
+                <span className="cert-tier-tab-icon">{tier.icon}</span>
+                <span className="cert-tier-tab-label">{tier.label}</span>
+                <span className="cert-tier-tab-count">{count}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Secondary Filter: Domain Pills */}
+        <div className="cert-filters" role="tablist" aria-label="Filter by domain">
+          {CATEGORY_FILTERS.map((cat) => (
             <button
-              key={filter.key}
+              key={cat.key}
               role="tab"
-              aria-selected={activeFilter === filter.key}
-              className={`cert-filter-btn ${activeFilter === filter.key ? 'active' : ''}`}
-              onClick={() => setActiveFilter(filter.key)}
+              aria-selected={activeCategory === cat.key}
+              className={`cert-filter-btn ${activeCategory === cat.key ? 'active' : ''}`}
+              onClick={() => setActiveCategory(cat.key)}
             >
-              <span>{filter.icon}</span>
-              <span>{filter.label}</span>
+              <span>{cat.icon}</span>
+              <span>{cat.label}</span>
             </button>
           ))}
         </div>
       </header>
 
-      {/* Grid of Certificates */}
-      <main className="certificates-grid">
-        {filteredCerts.map((cert) => (
-          <article
-            key={cert.id}
-            className="cert-card"
-            onClick={() => setSelectedCert(cert)}
-            tabIndex={0}
-            role="button"
-            aria-label={`View details for ${cert.title}`}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                setSelectedCert(cert);
-              }
-            }}
-          >
-            <div>
-              <div className="cert-card-top">
-                <span className="cert-category-badge">{cert.category}</span>
-                <div className="cert-issuer-icon" aria-hidden="true">
-                  {cert.icon}
-                </div>
-              </div>
+      {/* ── Section 1: Industry-Valid & Accredited Certifications ────────── */}
+      {(activeTier === 'all' || activeTier === 'industry') && (
+        <section className="cert-tier-section" aria-labelledby="industry-certs-heading">
+          <div className="cert-section-header">
+            <span className="cert-section-tag industry">
+              <FaAward /> Industry Validated &amp; Formal Credentials
+            </span>
+            <h2 id="industry-certs-heading" className="cert-section-title">
+              Industry Valid Certifications
+            </h2>
+            <p className="cert-section-desc">
+              Rigorous, proctored examinations and formally accredited institutional qualifications with verified industry standing.
+            </p>
+          </div>
 
-              <div className="cert-card-body">
-                <h3 className="cert-title">{cert.title}</h3>
-                <div className="cert-issuer-name">
-                  <span>{cert.issuer}</span>
-                </div>
-                <p className="cert-description">{cert.description}</p>
-                <div className="cert-tags">
-                  {cert.tags.map((tag, idx) => (
-                    <span key={idx} className="cert-tag-pill">{tag}</span>
-                  ))}
-                </div>
-              </div>
+          {industryCerts.length > 0 ? (
+            <main className="certificates-grid">
+              {industryCerts.map(renderCard)}
+            </main>
+          ) : (
+            <div className="cert-empty-state">
+              <p>No industry valid certifications found for the selected domain.</p>
             </div>
+          )}
+        </section>
+      )}
 
-            <div className="cert-card-footer">
-              <span className="cert-status-badge">
-                <FaCheckCircle /> {cert.badgeText}
-              </span>
-              {cert.credentialUrl ? (
-                <a
-                  href={cert.credentialUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cert-card-verify-btn"
-                  onClick={(e) => e.stopPropagation()}
-                  title={cert.credentialLabel || 'View Credential'}
-                >
-                  <FaExternalLinkAlt size={11} /> {cert.credentialUrl.includes('profile') ? 'View Profile' : 'Verify'}
-                </a>
-              ) : (
-                <span className="cert-click-hint">Click for details &rarr;</span>
-              )}
+      {/* ── Section 2: Continuous Learning Pathways & Badges ────────────── */}
+      {(activeTier === 'all' || activeTier === 'learning') && (
+        <section className="cert-tier-section" aria-labelledby="learning-certs-heading">
+          <div className="cert-section-header">
+            <span className="cert-section-tag learning">
+              <FaGraduationCap /> Continuous Learning &amp; Skill Badges
+            </span>
+            <h2 id="learning-certs-heading" className="cert-section-title">
+              Learning Pathways &amp; Domain Badges
+            </h2>
+            <p className="cert-section-desc">
+              Completed hands-on cybersecurity career tracks, cloud foundations, and verified algorithmic problem-solving milestones.
+            </p>
+          </div>
+
+          {learningCerts.length > 0 ? (
+            <main className="certificates-grid">
+              {learningCerts.map(renderCard)}
+            </main>
+          ) : (
+            <div className="cert-empty-state">
+              <p>No learning pathways found for the selected domain.</p>
             </div>
-          </article>
-        ))}
-      </main>
+          )}
+        </section>
+      )}
 
-      {/* Detail Modal */}
+      {/* ── Detail Modal ────────────────────────────────────────────────── */}
       {selectedCert && (
         <div
           className="cert-modal-overlay"
@@ -294,7 +507,7 @@ export default function Certificates() {
           aria-modal="true"
         >
           <div
-            className="cert-modal-content"
+            className={`cert-modal-content ${selectedCert.tier === 'industry' ? 'modal-industry' : ''}`}
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -305,26 +518,50 @@ export default function Certificates() {
               Close
             </button>
 
-            <div className="cert-modal-header">
-              <div className="cert-modal-badge-row">
-                <span className="cert-category-badge">{selectedCert.category}</span>
-                <span className="cert-status-badge">
-                  <FaCheckCircle /> {selectedCert.badgeText}
-                </span>
-              </div>
-              <h2 className="cert-modal-title">{selectedCert.title}</h2>
-              <div className="cert-modal-meta">
-                <span>
-                  <FaUniversity /> {selectedCert.issuer}
-                </span>
-                <span>
-                  <FaCalendarAlt /> {selectedCert.date}
-                </span>
-                {selectedCert.credentialId && (
-                  <span className="cert-credential-id">
-                    <FaIdCard /> ID: {selectedCert.credentialId}
+            <div className="cert-modal-header-container">
+              {selectedCert.badgeImage && (
+                <div className="cert-modal-badge-image-box">
+                  <img
+                    src={selectedCert.badgeImage}
+                    alt={`${selectedCert.title} Credly Badge`}
+                    className="cert-modal-badge-img"
+                  />
+                  <span className="cert-modal-badge-verified-tag">
+                    <SiCredly /> Credly Verified
                   </span>
-                )}
+                </div>
+              )}
+
+              <div className="cert-modal-header">
+                <div className="cert-modal-badge-row">
+                  <span className={`cert-tier-badge ${selectedCert.tier}`}>
+                    {selectedCert.tier === 'industry' ? <FaAward /> : <FaBook />}
+                    {selectedCert.tier === 'industry' ? 'Industry Valid Credential' : 'Learning Pathway / Badges'}
+                  </span>
+                  <span className="cert-category-badge">{selectedCert.category}</span>
+                  <span className="cert-status-badge">
+                    <FaCheckCircle /> {selectedCert.badgeText}
+                  </span>
+                </div>
+                <h2 className="cert-modal-title">{selectedCert.title}</h2>
+                <div className="cert-modal-meta">
+                  <span>
+                    <FaUniversity /> {selectedCert.issuer}
+                  </span>
+                  <span>
+                    <FaCalendarAlt /> {selectedCert.date}
+                  </span>
+                  {selectedCert.credentialId && (
+                    <span className="cert-credential-id">
+                      <FaIdCard /> Cert ID: {selectedCert.credentialId}
+                    </span>
+                  )}
+                  {selectedCert.credlyBadgeId && (
+                    <span className="cert-credential-id credly-meta-id">
+                      <SiCredly /> Credly ID: {selectedCert.credlyBadgeId.slice(0, 8)}...
+                    </span>
+                  )}
+                </div>
               </div>
             </div>
 
@@ -344,18 +581,29 @@ export default function Certificates() {
               ))}
             </ul>
 
-            {selectedCert.credentialUrl && (
-              <div className="cert-modal-actions">
+            <div className="cert-modal-actions">
+              {selectedCert.credentialUrl && (
                 <a
                   href={selectedCert.credentialUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cert-verify-btn"
+                  className={`cert-verify-btn ${selectedCert.credentialUrl.includes('credly') ? 'credly-verify-btn' : ''}`}
                 >
-                  <FaExternalLinkAlt /> {selectedCert.credentialLabel || 'Verify Certificate'}
+                  {selectedCert.credentialUrl.includes('credly') ? <SiCredly size={18} /> : <FaExternalLinkAlt />}
+                  {selectedCert.credentialLabel || 'Verify Certificate'}
                 </a>
-              </div>
-            )}
+              )}
+              {selectedCert.pdfUrl && (
+                <a
+                  href={selectedCert.pdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cert-pdf-btn"
+                >
+                  <FaFilePdf size={16} /> {selectedCert.pdfLabel || 'View Official Certificate (PDF)'}
+                </a>
+              )}
+            </div>
           </div>
         </div>
       )}
