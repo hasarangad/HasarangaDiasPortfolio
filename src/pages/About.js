@@ -29,8 +29,10 @@ export default function About() {
         <h1 className="section-title">A Glimpse Into My Journey</h1>
         <div className="bio-card">
           <p>
-            Hi, I'm <strong className="highlight-text">Keshan Hasaranga Dias Gunawardhana</strong> a final-year Computer Networks &amp; Cyber Security
-            undergraduate at KIU University, Sri Lanka. I have hands-on experience in network monitoring,
+            Hi, I'm <strong className="highlight-text">Keshan Hasaranga Dias Gunawardhana</strong>, a
+            graduate holding a <strong className="highlight-text">BSc (Hons) in Computer Networks and Cyber Security</strong> from
+            KIU University, Sri Lanka, and currently a <strong className="highlight-text">final-year Software Engineering undergraduate</strong> at
+            the Open University of Sri Lanka (OUSL). I have hands-on experience in network monitoring,
             vulnerability assessment, and threat simulation, built through dedicated security labs, a DevSecOps
             final year project, and a full-stack internship.
           </p>
@@ -54,24 +56,38 @@ export default function About() {
         <div className="edu-grid">
           <div className="edu-card">
             <div className="card-shine"></div>
-            <a href="https://www.ou.ac.lk/" target="_blank" rel="noopener noreferrer" className="edu-logo-link">
-              <img src={ousl} alt="OUSL Logo" className="edu-logo" />
+            <a href="https://www.kiu.ac.lk/" target="_blank" rel="noopener noreferrer" className="edu-logo-link">
+              <img src={kiu} alt="KIU Logo" className="edu-logo" />
             </a>
             <div className="edu-info">
-              <strong className="edu-degree">Software Engineering (BSc)</strong>
-              <span className="edu-institution">Open University of Sri Lanka (OUSL)</span>
-              <span className="edu-year">Expected Graduation: 2026</span>
+              <div className="edu-header-row">
+                <strong className="edu-degree">Bachelor of Science Honours in Computer Networks and Cyber Security</strong>
+                <span className="edu-badge edu-badge-graduated">Graduated</span>
+              </div>
+              <span className="edu-institution">KIU University, Sri Lanka</span>
+              <div className="edu-meta-row">
+                <span className="edu-grade-highlight">Second Class (Lower Division)</span>
+                <span className="edu-dot">&bull;</span>
+                <span className="edu-gpa">GPA: <strong>3.15</strong></span>
+              </div>
+              <span className="edu-year">Graduated / Completed</span>
             </div>
           </div>
 
           <div className="edu-card">
             <div className="card-shine"></div>
-            <a href="https://www.kiu.ac.lk/" target="_blank" rel="noopener noreferrer" className="edu-logo-link">
-              <img src={kiu} alt="KIU Logo" className="edu-logo" />
+            <a href="https://www.ou.ac.lk/" target="_blank" rel="noopener noreferrer" className="edu-logo-link">
+              <img src={ousl} alt="OUSL Logo" className="edu-logo" />
             </a>
             <div className="edu-info">
-              <strong className="edu-degree">Computer Networks &amp; Cybersecurity (BSc)</strong>
-              <span className="edu-institution">KIU University, Sri Lanka</span>
+              <div className="edu-header-row">
+                <strong className="edu-degree">Bachelor of Software Engineering Honours (BSE)</strong>
+                <span className="edu-badge edu-badge-ongoing">Final Year</span>
+              </div>
+              <span className="edu-institution">Open University of Sri Lanka (OUSL)</span>
+              <div className="edu-meta-row">
+                <span className="edu-status-text">Final-Year Undergraduate</span>
+              </div>
               <span className="edu-year">Expected Graduation: 2026</span>
             </div>
           </div>

@@ -10,13 +10,13 @@ const ROLES = [
     title: 'Software Engineer',
     description: 'Crafting Innovative Solutions',
     details:
-      'As a passionate Software Engineer, I specialize in developing scalable and efficient software solutions. With experience in full-stack development, I am adept at both frontend and backend technologies. My projects include building web applications, optimizing performance, and implementing modern software practices.',
+      'As a final-year Software Engineering undergraduate and passionate developer, I specialize in developing scalable and efficient software solutions. With experience in full-stack development, I am adept at both frontend and backend technologies, building high-performance web applications and applying modern engineering practices.',
   },
   {
     title: 'Cybersecurity Analyst',
     description: 'Protecting Digital Landscapes',
     details:
-      'As a dedicated Cybersecurity Enthusiast, I am committed to safeguarding digital environments from emerging threats. My focus includes ethical hacking, threat detection, and malware analysis. I am continuously expanding my knowledge through practical experience and specialized courses.',
+      'As a Cyber Security graduate (BSc Hons) and dedicated analyst, I am committed to safeguarding digital environments from emerging threats. My focus includes ethical hacking, threat detection, vulnerability assessment, and DevSecOps, continuously expanding my capabilities through real-world labs and industry certifications.',
   },
 ];
 

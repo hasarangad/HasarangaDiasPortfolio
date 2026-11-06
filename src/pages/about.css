@@ -182,13 +182,84 @@
 .edu-info {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
+  flex: 1;
+}
+
+.edu-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .edu-degree {
   color: #00ffb3;
-  font-size: clamp(16px, 1.4vw, 19px);
+  font-size: clamp(15.5px, 1.35vw, 18.5px);
   font-weight: 700;
+  line-height: 1.35;
+}
+
+.edu-badge {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.edu-badge-graduated {
+  background: rgba(0, 255, 179, 0.14);
+  color: #00ffb3;
+  border: 1px solid rgba(0, 255, 179, 0.35);
+  box-shadow: 0 0 10px rgba(0, 255, 179, 0.15);
+}
+
+.edu-badge-ongoing {
+  background: rgba(56, 189, 248, 0.14);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.15);
+}
+
+.edu-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 1px 0;
+}
+
+.edu-grade-highlight {
+  color: #ffd166;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.edu-dot {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.edu-gpa {
+  color: #cbd5e1;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.edu-gpa strong {
+  color: #00ffb3;
+  font-weight: 700;
+}
+
+.edu-status-text {
+  color: #93c5fd;
+  font-size: 13px;
+  font-weight: 500;
 }
 
 .edu-institution {
